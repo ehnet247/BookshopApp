@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookshopApp", "BookshopApp\BookshopApp.csproj", "{0E299EE4-96AB-456B-B7B7-C3F2925FF372}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIMockup", "UIMockup\UIMockup.csproj", "{E4C06BE5-7E5A-45DE-A2DB-9A0C332FE7F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E299EE4-96AB-456B-B7B7-C3F2925FF372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E299EE4-96AB-456B-B7B7-C3F2925FF372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E299EE4-96AB-456B-B7B7-C3F2925FF372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E299EE4-96AB-456B-B7B7-C3F2925FF372}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4C06BE5-7E5A-45DE-A2DB-9A0C332FE7F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4C06BE5-7E5A-45DE-A2DB-9A0C332FE7F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4C06BE5-7E5A-45DE-A2DB-9A0C332FE7F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4C06BE5-7E5A-45DE-A2DB-9A0C332FE7F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B134503-EC6D-4D8D-8C88-AED2DD42D516}
+	EndGlobalSection
+EndGlobal
