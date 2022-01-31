@@ -5,7 +5,12 @@
       "ProjectGuid": "0e299ee4-96ab-456b-b7b7-c3f2925ff372",
       "DisplayName": "BookshopApp",
       "ColorIndex": 0
+    },
+    "e4c06be5-7e5a-45de-a2db-9a0c332fe7f0": {
+      "ProjectGuid": "e4c06be5-7e5a-45de-a2db-9a0c332fe7f0",
+      "DisplayName": "UIMockup",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }
