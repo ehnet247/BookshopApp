@@ -18,11 +18,16 @@ namespace BookshopApp
     /// <summary>
     /// Interaction logic for NavUC.xaml
     /// </summary>
-    public partial class NavUC : UserControl
+    public partial class StockUC : UserControl
     {
-        public NavUC()
+        public StockUC()
         {
             InitializeComponent();
+        }
+
+        private void NavToggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

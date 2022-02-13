@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UIMockup"
-        xmlns:uc="clr-namespace:UIMockup.UC"
+        xmlns:uc="clr-namespace:BookshopApp.UC"
         mc:Ignorable="d"
         Title="BookshopApp" Height="450" Width="800">
     <Window.Resources>
@@ -50,9 +50,40 @@
     </Window.Resources>
 
     <DockPanel>
-        <uc:NavUC DockPanel.Dock="Left" />
-        <TabPanel>
-            
-        </TabPanel>
+        <StackPanel DockPanel.Dock="Left" VerticalAlignment="Top">
+            <ToggleButton
+                Name="ToggleButtonCaisse"
+                Content="Caisse"
+                Style="{StaticResource ToggleButtonStyle}" 
+                Checked="NavToggleButton_Checked" />
+            <ToggleButton
+                Name="ToggleButtonAchatOccasion"
+                Content="Achat occasion"
+                Style="{StaticResource ToggleButtonStyle}"
+                Checked="NavToggleButton_Checked" />
+            <ToggleButton
+                Name="ToggleButtonCommandesClient"
+                Content="Commandes client"
+                Style="{StaticResource ToggleButtonStyle}" 
+                Checked="NavToggleButton_Checked" />
+            <ToggleButton
+                Name="ToggleButtonStock"
+                Content="Stock"
+                Style="{StaticResource ToggleButtonStyle}" 
+                Checked="NavToggleButton_Checked" />
+            <ToggleButton
+                Name="ToggleButtonHisto"
+                Content="Historique transactions"
+                Style="{StaticResource ToggleButtonStyle}" 
+                Checked="NavToggleButton_Checked" />
+            <ToggleButton
+                Name="ToggleButtonAdmin"
+                Content="Administration"
+                Style="{StaticResource ToggleButtonStyle}" 
+                Checked="NavToggleButton_Checked" />
+        </StackPanel>
+        <ContentControl>
+
+        </ContentControl>
     </DockPanel>
 </Window>

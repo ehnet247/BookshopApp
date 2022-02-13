@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="BookshopApp.NavUC"
+﻿<UserControl x:Class="BookshopApp.UC"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -47,36 +47,7 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-    <StackPanel VerticalAlignment="Top">
-        <ToggleButton
-                Name="ToggleButtonCaisse"
-                Content="Caisse"
-                Style="{StaticResource ToggleButtonStyle}" 
-                Checked="NavToggleButton_Checked" />
-        <ToggleButton
-                Name="ToggleButtonAchatOccasion"
-                Content="Achat occasion"
-                Style="{StaticResource ToggleButtonStyle}"
-                Checked="NavToggleButton_Checked" />
-        <ToggleButton
-                Name="ToggleButtonCommandesClient"
-                Content="Commandes client"
-                Style="{StaticResource ToggleButtonStyle}" 
-                Checked="NavToggleButton_Checked" />
-        <ToggleButton
-                Name="ToggleButtonStock"
-                Content="Stock"
-                Style="{StaticResource ToggleButtonStyle}" 
-                Checked="NavToggleButton_Checked" />
-        <ToggleButton
-                Name="ToggleButtonHisto"
-                Content="Historique transactions"
-                Style="{StaticResource ToggleButtonStyle}" 
-                Checked="NavToggleButton_Checked" />
-        <ToggleButton
-                Name="ToggleButtonAdmin"
-                Content="Administration"
-                Style="{StaticResource ToggleButtonStyle}" 
-                Checked="NavToggleButton_Checked" />
-    </StackPanel>
+    <TabPanel>
+        
+    </TabPanel>
 </UserControl>
