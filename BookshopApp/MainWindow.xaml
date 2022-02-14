@@ -80,7 +80,10 @@
                 Style="{StaticResource ToggleButtonStyle}" 
                 Checked="NavToggleButton_Checked" />
         </StackPanel>
-        <ContentControl>
+        <ContentControl DockPanel.Dock="Top" Name="ControlMenu">
+
+        </ContentControl>
+        <ContentControl Name="ControlContent">
 
         </ContentControl>
     </DockPanel>
