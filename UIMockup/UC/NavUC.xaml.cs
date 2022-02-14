@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 namespace UIMockup.UC
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for UserControlStock.xaml
     /// </summary>
     public partial class NavUC : UserControl
     {
