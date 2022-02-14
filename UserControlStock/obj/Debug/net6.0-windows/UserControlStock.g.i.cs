@@ -53,7 +53,7 @@ namespace UserControls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/UserControlStock;component/usercontrolstock.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/UserControlStock;V1.0.0.0;component/usercontrolstock.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UserControlStock.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

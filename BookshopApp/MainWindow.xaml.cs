@@ -24,5 +24,10 @@ namespace BookshopApp
         {
             InitializeComponent();
         }
+
+        private void NavToggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+            //
+        }
     }
 }

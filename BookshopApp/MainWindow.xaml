@@ -6,7 +6,82 @@
         xmlns:local="clr-namespace:BookshopApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <DockPanel>
+    <Window.Resources>
+        <DataTemplate x:Key="CheckedDataTemplate">
+            <Grid Background="Orange" Height="64">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    TextAlignment="Center"
+                    Foreground="Black"
+                     FontSize="20"
+                    FontWeight="Bold"
+                    Text="{Binding}"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="UncheckedDataTemplate">
+            <Grid Background="DarkBlue" Height="64">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    TextAlignment="Center"
+                    Foreground="LightGray"
+                     FontSize="20"
+                    FontWeight="Bold"
+                    Text="{Binding}"/>
+            </Grid>
+        </DataTemplate>
 
+        <Style TargetType="ToggleButton" x:Key="ToggleButtonStyle">
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                    <Setter Property="ContentTemplate" Value="{StaticResource CheckedDataTemplate}"/>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="False">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                    <Setter Property="ContentTemplate" Value="{StaticResource UncheckedDataTemplate}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Left" VerticalAlignment="Top">
+            <ToggleButton
+                Name="ToggleButtonCaisse"
+                Content="Caisse"
+                Style="{StaticResource ToggleButtonStyle}" 
+                Checked="NavToggleButton_Checked" />
+            <ToggleButton
+                Name="ToggleButtonAchatOccasion"
+                Content="Achat occasion"
+                Style="{StaticResource ToggleButtonStyle}"
+                Checked="NavToggleButton_Checked" />
+            <ToggleButton
+                Name="ToggleButtonCommandesClient"
+                Content="Commandes client"
+                Style="{StaticResource ToggleButtonStyle}" 
+                Checked="NavToggleButton_Checked" />
+            <ToggleButton
+                Name="ToggleButtonStock"
+                Content="Stock"
+                Style="{StaticResource ToggleButtonStyle}" 
+                Checked="NavToggleButton_Checked" />
+            <ToggleButton
+                Name="ToggleButtonHisto"
+                Content="Historique transactions"
+                Style="{StaticResource ToggleButtonStyle}" 
+                Checked="NavToggleButton_Checked" />
+            <ToggleButton
+                Name="ToggleButtonAdmin"
+                Content="Administration"
+                Style="{StaticResource ToggleButtonStyle}" 
+                Checked="NavToggleButton_Checked" />
+        </StackPanel>
+        <ContentControl>
+
+        </ContentControl>
     </DockPanel>
 </Window>
