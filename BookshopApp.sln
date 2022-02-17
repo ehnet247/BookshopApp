@@ -5,11 +5,9 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookshopApp", "BookshopApp\BookshopApp.csproj", "{0E299EE4-96AB-456B-B7B7-C3F2925FF372}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserControls", "UserControls", "{D0675365-08EB-4088-9DD5-3139BDFDADA7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserControlStock", "UserControlStock\UserControlStock.csproj", "{CB2958A5-AFFE-4E25-A95F-F4A5B44D3398}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UIMockup", "UIMockup\UIMockup.csproj", "{7D860594-D842-4C75-9DAD-A43B92A02EB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserControls", "UserControls\UserControls.csproj", "{A67F928C-A4AB-45E9-B58D-12B6A31805C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,20 +19,17 @@ Global
 		{0E299EE4-96AB-456B-B7B7-C3F2925FF372}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E299EE4-96AB-456B-B7B7-C3F2925FF372}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E299EE4-96AB-456B-B7B7-C3F2925FF372}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CB2958A5-AFFE-4E25-A95F-F4A5B44D3398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CB2958A5-AFFE-4E25-A95F-F4A5B44D3398}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CB2958A5-AFFE-4E25-A95F-F4A5B44D3398}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CB2958A5-AFFE-4E25-A95F-F4A5B44D3398}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7D860594-D842-4C75-9DAD-A43B92A02EB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7D860594-D842-4C75-9DAD-A43B92A02EB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D860594-D842-4C75-9DAD-A43B92A02EB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D860594-D842-4C75-9DAD-A43B92A02EB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A67F928C-A4AB-45E9-B58D-12B6A31805C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A67F928C-A4AB-45E9-B58D-12B6A31805C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A67F928C-A4AB-45E9-B58D-12B6A31805C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A67F928C-A4AB-45E9-B58D-12B6A31805C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{CB2958A5-AFFE-4E25-A95F-F4A5B44D3398} = {D0675365-08EB-4088-9DD5-3139BDFDADA7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5B134503-EC6D-4D8D-8C88-AED2DD42D516}

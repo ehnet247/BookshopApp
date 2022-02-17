@@ -1,11 +1,33 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows7.0": {
+      "UserControls/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/UserControls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UserControls.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "UserControls/1.0.0": {
+      "type": "project",
+      "path": "../UserControls/UserControls.csproj",
+      "msbuildProject": "../UserControls/UserControls.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows7.0": [
+      "UserControls >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\compt\\.nuget\\packages\\": {},
@@ -40,7 +62,11 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\compt\\Documents\\Visual Studio 2022\\Github\\BookshopApp\\UserControls\\UserControls.csproj": {
+              "projectPath": "C:\\Users\\compt\\Documents\\Visual Studio 2022\\Github\\BookshopApp\\UserControls\\UserControls.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "UIMockup/1.0.0": {
+        "dependencies": {
+          "UserControls": "1.0.0"
+        },
         "runtime": {
           "UIMockup.dll": {}
+        }
+      },
+      "UserControls/1.0.0": {
+        "runtime": {
+          "UserControls.dll": {}
         }
       }
     }
   },
   "libraries": {
     "UIMockup/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UserControls/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

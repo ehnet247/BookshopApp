@@ -4,6 +4,8 @@ C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\bin\Debu
 C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\bin\Debug\net6.0-windows\UIMockup.dll
 C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\bin\Debug\net6.0-windows\ref\UIMockup.dll
 C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\bin\Debug\net6.0-windows\UIMockup.pdb
+C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\bin\Debug\net6.0-windows\UserControls.dll
+C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\bin\Debug\net6.0-windows\UserControls.pdb
 C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\obj\Debug\net6.0-windows\UIMockup.csproj.AssemblyReference.cache
 C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\obj\Debug\net6.0-windows\App.g.cs
@@ -15,10 +17,8 @@ C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\obj\Debu
 C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\obj\Debug\net6.0-windows\UIMockup.AssemblyInfoInputs.cache
 C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\obj\Debug\net6.0-windows\UIMockup.AssemblyInfo.cs
 C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\obj\Debug\net6.0-windows\UIMockup.csproj.CoreCompileInputs.cache
+C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\obj\Debug\net6.0-windows\UIMockup.csproj.CopyComplete
 C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\obj\Debug\net6.0-windows\UIMockup.dll
 C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\obj\Debug\net6.0-windows\ref\UIMockup.dll
 C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\obj\Debug\net6.0-windows\UIMockup.pdb
 C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\obj\Debug\net6.0-windows\UIMockup.genruntimeconfig.cache
-C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
-C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\obj\Debug\net6.0-windows\UC\NavUC.g.cs
-C:\Users\compt\Documents\Visual Studio 2022\Github\BookshopApp\UIMockup\obj\Debug\net6.0-windows\UC\NavUC.baml
