@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace UserControls
 {
     /// <summary>
-    /// Interaction logic for UserControlStock.xaml
+    /// Interaction logic for StockView.xaml
     /// </summary>
-    public partial class UserControlStock : UserControl
+    public partial class StockView : UserControl
     {
-        public UserControlStock()
+        public StockView()
         {
             InitializeComponent();
         }
