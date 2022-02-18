@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:UIMockup" xmlns:usercontrols="clr-namespace:UserControls;assembly=UserControls"
+        xmlns:local="clr-namespace:UIMockup"
+        xmlns:uc="clr-namespace:UserControls;assembly=UserControls"
         mc:Ignorable="d"
         Title="BookshopApp" Height="450" Width="800">
     <Window.Resources>
@@ -30,6 +31,16 @@
                     FontWeight="Bold"
                     Text="{Binding}"/>
             </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type CaisseViewModel}">
+
+            <uc:CaisseView/>
+
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type StockViewModel}">
+
+            <uc:StockView/>
+
         </DataTemplate>
 
         <Style TargetType="ToggleButton" x:Key="ToggleButtonStyle">
@@ -81,8 +92,9 @@
                 Style="{StaticResource ToggleButtonStyle}" 
                 Checked="NavToggleButton_Checked" />
         </StackPanel>
-        <usercontrols:UserControlStock DockPanel.Dock="Right">
 
-        </usercontrols:UserControlStock>
+        <!--<ContentControl DockPanel.Dock="Right"></ContentControl>-->
+        <uc:CaisseView DockPanel.Dock="Right"></uc:CaisseView>
     </DockPanel>
 </Window>
+
