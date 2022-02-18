@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UIMockup.ViewModels;
 
 namespace UIMockup
 {
@@ -24,6 +25,7 @@ namespace UIMockup
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new NavigationViewModel();
         }
 
         private void NavToggleButton_Checked(object sender, RoutedEventArgs e)

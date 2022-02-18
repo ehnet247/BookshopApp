@@ -66,6 +66,7 @@
             <ToggleButton
                 Name="ToggleButtonCaisse"
                 Content="Caisse"
+                Command="{Binding CaisseCommand}"
                 Style="{StaticResource ToggleButtonStyle}" 
                 Checked="NavToggleButton_Checked" />
             <ToggleButton
@@ -81,6 +82,7 @@
             <ToggleButton
                 Name="ToggleButtonStock"
                 Content="Stock"
+                Command="{Binding StockCommand}"
                 Style="{StaticResource ToggleButtonStyle}" 
                 Checked="NavToggleButton_Checked" />
             <ToggleButton
@@ -95,8 +97,8 @@
                 Checked="NavToggleButton_Checked" />
         </StackPanel>
 
-        <!--<ContentControl DockPanel.Dock="Right"></ContentControl>-->
-        <uc:CaisseView DockPanel.Dock="Right"></uc:CaisseView>
+        <!--<uc:CaisseView DockPanel.Dock="Right"></uc:CaisseView>-->
+        <ContentControl x:Name="Pages" DockPanel.Dock="Right" Content="{Binding SelectedViewModel}"/>
     </DockPanel>
 </Window>
 
