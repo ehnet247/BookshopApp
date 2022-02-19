@@ -8,5 +8,9 @@ namespace UIMockup.ViewModels
 {
     public class CaisseViewModel
     {
+        public override string ToString()
+        {
+            return "Caisse";
+        }
     }
 }

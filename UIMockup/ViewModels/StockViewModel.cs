@@ -8,5 +8,9 @@ namespace UIMockup.ViewModels
 {
     public class StockViewModel
     {
+        public override string ToString()
+        {
+            return "Stock";
+        }
     }
 }

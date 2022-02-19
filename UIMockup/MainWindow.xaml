@@ -62,7 +62,7 @@
     </Window.Resources>
 
     <DockPanel>
-        <StackPanel DockPanel.Dock="Left" VerticalAlignment="Top">
+        <StackPanel DockPanel.Dock="Left" Name="NavPanel" VerticalAlignment="Top">
             <ToggleButton
                 Name="ToggleButtonCaisse"
                 Content="Caisse"

@@ -23,11 +23,17 @@ namespace UIMockup.ViewModels
 
             get { return selectedViewModel; }
 
-            set { selectedViewModel = value; OnPropertyChanged("SelectedViewModel"); }
+            set
+            {
+                if (value != null)
+                {
+                    selectedViewModel = value;
+                    OnPropertyChanged("SelectedViewModel");
+                }
+                
+            }
 
         }
-
-
 
         public NavigationViewModel()
 

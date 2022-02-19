@@ -30,7 +30,28 @@ namespace UIMockup
 
         private void NavToggleButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            string selectedTab = string.Empty;
+            if (sender != null)
+            {
+                Type refType = typeof(ToggleButton);
+                if (sender.GetType() == refType)
+                {
+                    selectedTab = ((ToggleButton)sender).Content.ToString();
+                    UncheckTabsExcept(selectedTab);
+                }
+            }
+        }
+        private void UncheckTabsExcept(string selectedTab)
+        {
+            foreach (var item in NavPanel.Children)
+            {
+                Type refType = typeof(ToggleButton);
+                if (item.GetType() == refType)
+                    if (((ToggleButton)item).Content.ToString() != selectedTab)
+                    {
+                        ((ToggleButton)item).IsChecked = false;
+                    }
+            }
         }
     }
 }
