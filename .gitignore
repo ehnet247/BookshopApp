@@ -252,3 +252,6 @@ UIMockup/bin/Debug/net6.0-windows/UIMockup.pdb
 obj
 obj
 obj
+*.v2
+*.v1
+.vs/BookshopApp/v17/.suo
