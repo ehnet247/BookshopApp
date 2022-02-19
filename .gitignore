@@ -255,3 +255,11 @@ obj
 *.v2
 *.v1
 .vs/BookshopApp/v17/.suo
+.vs/BookshopApp/DesignTimeBuild/.dtbcache.v2
+.vs/BookshopApp/v17/.futdcache.v1
+.vs/BookshopApp/v17/.suo
+UIMockup/bin/Debug/net6.0-windows/ref/UIMockup.dll
+UIMockup/bin/Debug/net6.0-windows/UIMockup.dll
+UIMockup/bin/Debug/net6.0-windows/UIMockup.pdb
+UIMockup/bin/Debug/net6.0-windows/UserControls.dll
+UIMockup/bin/Debug/net6.0-windows/UserControls.pdb
