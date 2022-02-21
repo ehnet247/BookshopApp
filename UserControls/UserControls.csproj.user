@@ -5,9 +5,21 @@
     <Compile Update="CaisseView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MenuCaisseView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MenuStockView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="CaisseView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MenuCaisseView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MenuStockView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="StockView.xaml">

@@ -34,15 +34,23 @@
                     Text="{Binding}"/>
             </Grid>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:CaisseViewModel}">
+        <DataTemplate DataType="{x:Type vm:CaisseContentViewModel}">
 
-            <uc:CaisseView/>
+            <uc:CaisseView />
 
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:StockViewModel}">
+        <DataTemplate DataType="{x:Type vm:StockContentViewModel}">
 
-            <uc:StockView/>
+            <uc:StockView />
 
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:CaisseMenuViewModel}">
+            <uc:MenuCaisse />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:StockMenuViewModel}">
+            <uc:MenuStock />
         </DataTemplate>
 
         <Style TargetType="ToggleButton" x:Key="ToggleButtonStyle">
@@ -97,8 +105,8 @@
                 Checked="NavToggleButton_Checked" />
         </StackPanel>
 
-        <!--<uc:CaisseView DockPanel.Dock="Right"></uc:CaisseView>-->
-        <ContentControl x:Name="Pages" DockPanel.Dock="Right" Content="{Binding SelectedViewModel}"/>
+        <ContentControl x:Name="Menu" DockPanel.Dock="Top" Content="{Binding SelectedMenuViewModel}"/>
+        <ContentControl x:Name="Pages" DockPanel.Dock="Right" Content="{Binding SelectedContentViewModel}"/>
     </DockPanel>
 </Window>
 

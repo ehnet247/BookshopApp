@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UIMockup.ViewModels
 {
-    public class CaisseViewModel
+    public class CaisseContentViewModel
     {
         public override string ToString()
         {

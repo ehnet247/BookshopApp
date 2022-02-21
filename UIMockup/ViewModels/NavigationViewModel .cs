@@ -15,22 +15,41 @@ namespace UIMockup.ViewModels
 
         public ICommand StockCommand { get; set; }
 
-        private object selectedViewModel = new StockViewModel();
+        private object selectedContentViewModel = new StockContentViewModel();
+        private object selectedMenuViewModel = new StockMenuViewModel();
 
-        public object SelectedViewModel
+        public object SelectedContentViewModel
 
         {
 
-            get { return selectedViewModel; }
+            get { return selectedContentViewModel; }
 
             set
             {
                 if (value != null)
                 {
-                    selectedViewModel = value;
-                    OnPropertyChanged("SelectedViewModel");
+                    selectedContentViewModel = value;
+                    OnPropertyChanged("SelectedContentViewModel");
                 }
                 
+            }
+
+        }
+
+        public object SelectedMenuViewModel
+
+        {
+
+            get { return selectedMenuViewModel; }
+
+            set
+            {
+                if (value != null)
+                {
+                    selectedMenuViewModel = value;
+                    OnPropertyChanged("SelectedMenuViewModel");
+                }
+
             }
 
         }
@@ -49,7 +68,8 @@ namespace UIMockup.ViewModels
 
         {
 
-            SelectedViewModel = new CaisseViewModel();
+            SelectedContentViewModel = new CaisseContentViewModel();
+            SelectedMenuViewModel = new CaisseMenuViewModel();
 
         }
 
@@ -57,7 +77,8 @@ namespace UIMockup.ViewModels
 
         {
 
-            SelectedViewModel = new StockViewModel();
+            SelectedContentViewModel = new StockContentViewModel();
+            SelectedMenuViewModel = new StockMenuViewModel();
 
         }
 
