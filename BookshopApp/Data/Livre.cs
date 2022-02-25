@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace BookshopApp.Data
 {
     public class Livre
     {
+        [Key]
         public UInt64 Ean { get; set; } // BIGINT NOT NULL
         public string Titre { get; set; } // VARCHAR(255) NOT NULL
         public string Auteurs { get; set; } // VARCHAR(255) NOT NULL
