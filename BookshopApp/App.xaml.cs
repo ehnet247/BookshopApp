@@ -33,7 +33,10 @@ namespace BookshopApp
         private void OnStartup(object s, StartupEventArgs e)
         {
             var mainWindow = serviceProvider.GetService<MainWindow>();
-            mainWindow.Show();
+            if (mainWindow != null)
+            {
+                mainWindow.Show();
+            }
         }
     }
 }
