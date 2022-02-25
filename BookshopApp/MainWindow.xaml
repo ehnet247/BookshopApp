@@ -5,86 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookshopApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Background="Azure"
+        Title="MainWindow" Height="6000" Width="950">
     <Window.Resources>
-        <DataTemplate x:Key="CheckedDataTemplate">
-            <Grid Background="Orange" Height="64">
-                <TextBlock
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    TextAlignment="Center"
-                    Foreground="Black"
-                     FontSize="20"
-                    FontWeight="Bold"
-                    Text="{Binding}"/>
-            </Grid>
-        </DataTemplate>
-        <DataTemplate x:Key="UncheckedDataTemplate">
-            <Grid Background="DarkBlue" Height="64">
-                <TextBlock
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    TextAlignment="Center"
-                    Foreground="LightGray"
-                     FontSize="20"
-                    FontWeight="Bold"
-                    Text="{Binding}"/>
-            </Grid>
-        </DataTemplate>
-
-        <Style TargetType="ToggleButton" x:Key="ToggleButtonStyle">
-            <Style.Triggers>
-                <Trigger Property="IsChecked" Value="True">
-                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-                    <Setter Property="VerticalContentAlignment" Value="Stretch"/>
-                    <Setter Property="ContentTemplate" Value="{StaticResource CheckedDataTemplate}"/>
-                </Trigger>
-                <Trigger Property="IsChecked" Value="False">
-                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-                    <Setter Property="VerticalContentAlignment" Value="Stretch"/>
-                    <Setter Property="ContentTemplate" Value="{StaticResource UncheckedDataTemplate}"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
     </Window.Resources>
-    <DockPanel>
-        <StackPanel DockPanel.Dock="Left" VerticalAlignment="Top">
-            <ToggleButton
-                Name="ToggleButtonCaisse"
-                Content="Caisse"
-                Style="{StaticResource ToggleButtonStyle}" 
-                Checked="NavToggleButton_Checked" />
-            <ToggleButton
-                Name="ToggleButtonAchatOccasion"
-                Content="Achat occasion"
-                Style="{StaticResource ToggleButtonStyle}"
-                Checked="NavToggleButton_Checked" />
-            <ToggleButton
-                Name="ToggleButtonCommandesClient"
-                Content="Commandes client"
-                Style="{StaticResource ToggleButtonStyle}" 
-                Checked="NavToggleButton_Checked" />
-            <ToggleButton
-                Name="ToggleButtonStock"
-                Content="Stock"
-                Style="{StaticResource ToggleButtonStyle}" 
-                Checked="NavToggleButton_Checked" />
-            <ToggleButton
-                Name="ToggleButtonHisto"
-                Content="Historique transactions"
-                Style="{StaticResource ToggleButtonStyle}" 
-                Checked="NavToggleButton_Checked" />
-            <ToggleButton
-                Name="ToggleButtonAdmin"
-                Content="Administration"
-                Style="{StaticResource ToggleButtonStyle}" 
-                Checked="NavToggleButton_Checked" />
-        </StackPanel>
-        <ContentControl DockPanel.Dock="Top" Name="ControlMenu">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
 
-        </ContentControl>
-        <ContentControl Name="ControlContent">
+        <Label Grid.Row="0" Content="CRUD operation in SQLite" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" />
 
-        </ContentControl>
-    </DockPanel>
+        <DataGrid x:Name="LivreDG" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Margin="5" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Ean" Binding="{Binding Ean}" />
+                <DataGridTextColumn Header="Titre" Binding="{Binding Titre}" />
+                <DataGridTextColumn Header="Auteurs" Binding="{Binding Auteurs}" />
+                <DataGridTextColumn Header="Fournisseur" Binding="{Binding Fournisseur}" />
+                <DataGridTextColumn Header="Stock" Binding="{Binding Stock}" />
+                <DataGridTextColumn Header="Editeur" Binding="{Binding Editeur}" />
+                <DataGridTextColumn Header="Categorie" Binding="{Binding Categorie}" />
+                <DataGridTextColumn Header="Date de publication" Binding="{Binding DatePublication}" />
+                <DataGridTextColumn Header="Disponibilité" Binding="{Binding Disponibilite}" />
+                <DataGridTextColumn Header="Poids" Binding="{Binding Poids}" />
+                <DataGridTextColumn Header="Prix de vente" Binding="{Binding PrixVente}" />
+                <DataGridTextColumn Header="Prix neuf" Binding="{Binding PrixNeuf}" />
+                <DataGridTextColumn Header="Taux TVA" Binding="{Binding TvaTaux}" />
+                <DataGridTextColumn Header="Montant TVA" Binding="{Binding TvaMontant}" />
+                <DataGridTextColumn Header="Occasion" Binding="{Binding Occasion}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
 </Window>

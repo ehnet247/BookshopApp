@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BookshopApp.Data;
 
 namespace BookshopApp
 {
@@ -20,14 +21,17 @@ namespace BookshopApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        LivreDbContext DbContext;
+        public MainWindow(LivreDbContext dbContext)
         {
+            DbContext = dbContext;
             InitializeComponent();
+            GetLivres();
         }
 
-        private void NavToggleButton_Checked(object sender, RoutedEventArgs e)
+        private void GetLivres()
         {
-            //
+            LivreDG.ItemsSource = DbContext.Livres.ToList();
         }
     }
 }
