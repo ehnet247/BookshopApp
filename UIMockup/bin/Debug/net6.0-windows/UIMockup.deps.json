@@ -8,8 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "UIMockup/1.0.0": {
         "dependencies": {
-          "CommunityToolkit.Mvvm": "7.1.2",
-          "UserControls": "1.0.0"
+          "CommunityToolkit.Mvvm": "7.1.2"
         },
         "runtime": {
           "UIMockup.dll": {}
@@ -21,11 +20,6 @@
             "assemblyVersion": "7.1.0.0",
             "fileVersion": "7.1.2.1"
           }
-        }
-      },
-      "UserControls/1.0.0": {
-        "runtime": {
-          "UserControls.dll": {}
         }
       }
     }
@@ -42,11 +36,6 @@
       "sha512": "sha512-/zEpNH3FIBFY2iZRBi+S3Sia3q2yJgy1IQHnWRW7MdhQIe3IGcA1TGqJdbtjiJBmNy4v7kkPdNzgYlvvNDjXZg==",
       "path": "communitytoolkit.mvvm/7.1.2",
       "hashPath": "communitytoolkit.mvvm.7.1.2.nupkg.sha512"
-    },
-    "UserControls/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }
