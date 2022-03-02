@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BookshopApp.Data;
+using BookshopApp.Model;
 
 namespace BookshopApp
 {
@@ -31,7 +31,7 @@ namespace BookshopApp
 
         private void GetLivres()
         {
-            LivreDG.ItemsSource = DbContext.Livres.ToList();
+            LivresDG.ItemsSource = DbContext.Livres.ToList();
         }
     }
 }

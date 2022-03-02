@@ -18,7 +18,7 @@
 
         <Label Grid.Row="0" Content="CRUD operation in SQLite" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" />
 
-        <DataGrid x:Name="LivreDG" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Margin="5" >
+        <DataGrid x:Name="LivresDG" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Margin="5" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Ean" Binding="{Binding Ean}" />
                 <DataGridTextColumn Header="Titre" Binding="{Binding Titre}" />
