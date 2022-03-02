@@ -1,4 +1,4 @@
-﻿using BookshopApp.Data;
+﻿using BookshopApp.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
