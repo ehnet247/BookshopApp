@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -13,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BookshopApp.Model;
+using BookshopApp.ViewModels;
 
 namespace BookshopApp
 {
@@ -21,17 +23,43 @@ namespace BookshopApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        LivreDbContext DbContext;
-        public MainWindow(LivreDbContext dbContext)
+
+        public MainWindow()
         {
-            DbContext = dbContext;
             InitializeComponent();
+            this.DataContext = new ViewModelNavigation();
             GetLivres();
         }
 
         private void GetLivres()
         {
-            LivresDG.ItemsSource = DbContext.Livres.ToList();
+            //LivresDG.ItemsSource = DbContext.Livres.ToList();
+        }
+
+        private void NavToggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+            string selectedTab = string.Empty;
+            if (sender != null)
+            {
+                Type refType = typeof(ToggleButton);
+                if (sender.GetType() == refType)
+                {
+                    selectedTab = ((ToggleButton)sender).Content.ToString();
+                    UncheckTabsExcept(selectedTab);
+                }
+            }
+        }
+        private void UncheckTabsExcept(string selectedTab)
+        {
+            foreach (var item in NavPanel.Children)
+            {
+                Type refType = typeof(ToggleButton);
+                if (item.GetType() == refType)
+                    if (((ToggleButton)item).Content.ToString() != selectedTab)
+                    {
+                        ((ToggleButton)item).IsChecked = false;
+                    }
+            }
         }
     }
 }

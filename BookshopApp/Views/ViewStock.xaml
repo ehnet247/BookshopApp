@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
-        <DataGrid x:Name="StockDG" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Margin="5" >
+        <DataGrid x:Name="DGStock" ItemsSource="{Binding DataSource}" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Margin="5" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Ean" Binding="{Binding Ean}" />
                 <DataGridTextColumn Header="Titre" Binding="{Binding Titre}" />

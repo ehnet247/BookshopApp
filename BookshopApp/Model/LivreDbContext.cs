@@ -14,7 +14,17 @@ namespace BookshopApp.Model
             Database.EnsureCreated();
         }
 
+        public LivreDbContext()
+        {
+            Database.EnsureCreated();
+        }
+
         public DbSet<Livre> Livres { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Data Source = BookshopDb.db");
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
