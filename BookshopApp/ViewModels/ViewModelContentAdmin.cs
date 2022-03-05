@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace BookshopApp.ViewModels
 {
-    public class StockContentViewModel
+    public class ViewModelContentAdmin
     {
         public override string ToString()
         {
-            return "Stock";
+            return "Admin";
         }
     }
 }

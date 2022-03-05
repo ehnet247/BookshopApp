@@ -7,7 +7,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace BookshopApp.ViewModels
 {
-    internal class HistoMenuViewModel : ObservableRecipient
+    internal class ViewModelMenuAdmin : ObservableRecipient
     {
     }
 }

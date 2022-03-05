@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookshopApp.ViewModels
 {
-    public class HistoContentViewModel
+    public class ViewModelContentHisto
     {
         public override string ToString()
         {

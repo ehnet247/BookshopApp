@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace BookshopApp.ViewModels
 {
-    internal class NavigationViewModel : INotifyPropertyChanged
+    internal class ViewModelNavigation : INotifyPropertyChanged
     {
 
         public ICommand CaisseCommand { get; set; }
@@ -19,8 +19,8 @@ namespace BookshopApp.ViewModels
         public ICommand HistoCommand { get; set; }
         public ICommand AdminCommand { get; set; }
 
-        private object selectedContentViewModel = new StockContentViewModel();
-        private object selectedMenuViewModel = new StockMenuViewModel();
+        private object selectedContentViewModel = new ViewModelContentStock();
+        private object selectedMenuViewModel = new ViewModelMenuStock();
 
         public object SelectedContentViewModel
 
@@ -35,7 +35,7 @@ namespace BookshopApp.ViewModels
                     selectedContentViewModel = value;
                     OnPropertyChanged("SelectedContentViewModel");
                 }
-                
+
             }
 
         }
@@ -58,7 +58,7 @@ namespace BookshopApp.ViewModels
 
         }
 
-        public NavigationViewModel()
+        public ViewModelNavigation()
 
         {
             CaisseCommand = new BaseCommand(OpenCaisse);
@@ -75,8 +75,8 @@ namespace BookshopApp.ViewModels
 
         {
 
-            SelectedContentViewModel = new CaisseContentViewModel();
-            SelectedMenuViewModel = new CaisseMenuViewModel();
+            SelectedContentViewModel = new ViewModelContentCaisse();
+            SelectedMenuViewModel = new ViewModelMenuCaisse();
 
         }
 
@@ -84,8 +84,8 @@ namespace BookshopApp.ViewModels
 
         {
 
-            SelectedContentViewModel = new AchatContentViewModel();
-            SelectedMenuViewModel = new AchatMenuViewModel();
+            SelectedContentViewModel = new ViewModelContentAchat();
+            SelectedMenuViewModel = new ViewModelMenuAchat();
 
         }
 
@@ -93,8 +93,8 @@ namespace BookshopApp.ViewModels
 
         {
 
-            SelectedContentViewModel = new CdeClientContentViewModel();
-            SelectedMenuViewModel = new CdeClientMenuViewModel();
+            SelectedContentViewModel = new ViewModelContentCdeClient();
+            SelectedMenuViewModel = new ViewModelMenuCdeClient();
 
         }
 
@@ -102,8 +102,8 @@ namespace BookshopApp.ViewModels
 
         {
 
-            SelectedContentViewModel = new StockContentViewModel();
-            SelectedMenuViewModel = new StockMenuViewModel();
+            SelectedContentViewModel = new ViewModelContentStock();
+            SelectedMenuViewModel = new ViewModelMenuStock();
 
         }
 
@@ -111,8 +111,8 @@ namespace BookshopApp.ViewModels
 
         {
 
-            SelectedContentViewModel = new HistoContentViewModel();
-            SelectedMenuViewModel = new HistoMenuViewModel();
+            SelectedContentViewModel = new ViewModelContentHisto();
+            SelectedMenuViewModel = new ViewModelMenuHisto();
 
         }
 
@@ -120,8 +120,8 @@ namespace BookshopApp.ViewModels
 
         {
 
-            SelectedContentViewModel = new AdminContentViewModel();
-            SelectedMenuViewModel = new AdminMenuViewModel();
+            SelectedContentViewModel = new ViewModelContentAdmin();
+            SelectedMenuViewModel = new ViewModelMenuAdmin();
 
         }
         #endregion

@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookshopApp.ViewModels
 {
-    public class CdeClientContentViewModel
+    internal class ViewModelMenuCaisse
     {
-        public override string ToString()
-        {
-            return "CdeClient";
-        }
     }
 }
