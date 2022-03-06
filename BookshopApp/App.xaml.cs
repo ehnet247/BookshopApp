@@ -1,4 +1,5 @@
-﻿using BookshopApp.Data;
+﻿using BookshopApp.Model;
+using BookshopApp.Views;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -21,10 +22,9 @@ namespace BookshopApp
         public App()
         {
             ServiceCollection services = new ServiceCollection();
-            services.AddDbContext<LivreDbContext>(option =>
-            {
-                option.UseSqlite("Data Source = BookshopDb.db");
-            });
+            //services.AddDbContext<LivreDbContext>(option =>
+            //{
+            //});
 
             services.AddSingleton<MainWindow>();
             serviceProvider = services.BuildServiceProvider();
@@ -32,10 +32,10 @@ namespace BookshopApp
 
         private void OnStartup(object s, StartupEventArgs e)
         {
-            var mainWindow = serviceProvider.GetService<MainWindow>();
-            if (mainWindow != null)
+            var app = serviceProvider.GetService<MainWindow>();
+            if (app != null)
             {
-                mainWindow.Show();
+                app.Show();
             }
         }
     }

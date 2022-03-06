@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UIMockup.ViewModels
+namespace BookshopApp.ViewModels
 {
-    public class AdminContentViewModel
+    public class ViewModelContentAdmin
     {
         public override string ToString()
         {

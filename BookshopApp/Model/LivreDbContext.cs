@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookshopApp.Data
+namespace BookshopApp.Model
 {
     public class LivreDbContext : DbContext
     {
@@ -14,7 +14,17 @@ namespace BookshopApp.Data
             Database.EnsureCreated();
         }
 
+        public LivreDbContext()
+        {
+            Database.EnsureCreated();
+        }
+
         public DbSet<Livre> Livres { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Data Source = BookshopDb.db");
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

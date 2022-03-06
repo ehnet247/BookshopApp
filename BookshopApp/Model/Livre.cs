@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookshopApp.Data
+namespace BookshopApp.Model
 {
     public class Livre
     {

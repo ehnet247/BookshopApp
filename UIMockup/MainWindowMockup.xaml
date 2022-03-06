@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UIMockup"
-        xmlns:uc="clr-namespace:UserControls;assembly=UserControls"
+        xmlns:uc="clr-namespace:UIMockup.Views"
         xmlns:vm="clr-namespace:UIMockup.ViewModels"
         
         mc:Ignorable="d"
@@ -44,6 +44,11 @@
             <uc:StockView />
 
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:AchatContentViewModel}">
+
+            <uc:AchatView />
+
+        </DataTemplate>
 
         <DataTemplate DataType="{x:Type vm:CaisseMenuViewModel}">
             <uc:MenuCaisse />
@@ -80,11 +85,13 @@
             <ToggleButton
                 Name="ToggleButtonAchatOccasion"
                 Content="Achat occasion"
+                Command="{Binding AchatCommand}"
                 Style="{StaticResource ToggleButtonStyle}"
                 Checked="NavToggleButton_Checked" />
             <ToggleButton
                 Name="ToggleButtonCommandesClient"
                 Content="Commandes client"
+                Command="{Binding CdeClientCommand}"
                 Style="{StaticResource ToggleButtonStyle}" 
                 Checked="NavToggleButton_Checked" />
             <ToggleButton
@@ -96,11 +103,13 @@
             <ToggleButton
                 Name="ToggleButtonHisto"
                 Content="Historique transactions"
+                Command="{Binding HistoCommand}"
                 Style="{StaticResource ToggleButtonStyle}" 
                 Checked="NavToggleButton_Checked" />
             <ToggleButton
                 Name="ToggleButtonAdmin"
                 Content="Administration"
+                Command="{Binding AdminCommand}"
                 Style="{StaticResource ToggleButtonStyle}" 
                 Checked="NavToggleButton_Checked" />
         </StackPanel>
