@@ -4,38 +4,131 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookshopApp"
+        xmlns:uc="clr-namespace:BookshopApp.Views"
+        xmlns:vm="clr-namespace:BookshopApp.ViewModels"
         mc:Ignorable="d"
-        Background="Azure"
-        Title="MainWindow" Height="6000" Width="950">
+        Background="Snow"
+        Title="MainWindow" Height="6100" Width="950">
     <Window.Resources>
+        <DataTemplate x:Key="CheckedDataTemplate">
+            <Grid Background="DodgerBlue" Height="64">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    TextAlignment="Center"
+                    Foreground="Black"
+                     FontSize="20"
+                    FontWeight="Bold"
+                    Text="{Binding}"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="UncheckedDataTemplate">
+            <Grid Background="DarkSlateGray" Height="64">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    TextAlignment="Center"
+                    Foreground="Ivory"
+                     FontSize="20"
+                    FontWeight="DemiBold"
+                    Text="{Binding}"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ViewModelContentCaisse}">
+
+            <uc:ViewCaisse />
+
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ViewModelContentStock}">
+
+            <uc:ViewStock />
+
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ViewModelContentStockRecherche}">
+
+            <uc:ViewStockRecherche />
+
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ViewModelContentStockConsult}">
+
+            <uc:ViewStockConsult />
+
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ViewModelContentStockModif}">
+
+            <uc:ViewStockModif />
+
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ViewModelContentAchat}">
+
+            <uc:ViewAchat />
+
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:ViewModelMenuCaisse}">
+            <uc:ViewMenuCaisse />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:ViewModelMenuStock}">
+            <uc:ViewMenuStock />
+        </DataTemplate>
+
+        <Style TargetType="ToggleButton" x:Key="ToggleButtonStyle">
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                    <Setter Property="ContentTemplate" Value="{StaticResource CheckedDataTemplate}"/>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="False">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                    <Setter Property="ContentTemplate" Value="{StaticResource UncheckedDataTemplate}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="60" />
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Left" Name="NavPanel" VerticalAlignment="Top">
+            <ToggleButton
+                Name="ToggleButtonCaisse"
+                Content="Caisse"
+                Command="{Binding CaisseCommand}"
+                Style="{StaticResource ToggleButtonStyle}" 
+                Checked="NavToggleButton_Checked" />
+            <ToggleButton
+                Name="ToggleButtonAchatOccasion"
+                Content="Achat occasion"
+                Command="{Binding AchatCommand}"
+                Style="{StaticResource ToggleButtonStyle}"
+                Checked="NavToggleButton_Checked" />
+            <ToggleButton
+                Name="ToggleButtonCommandesClient"
+                Content="Commandes client"
+                Command="{Binding CdeClientCommand}"
+                Style="{StaticResource ToggleButtonStyle}" 
+                Checked="NavToggleButton_Checked" />
+            <ToggleButton
+                Name="ToggleButtonStock"
+                Content="Stock"
+                Command="{Binding StockCommand}"
+                Style="{StaticResource ToggleButtonStyle}" 
+                Checked="NavToggleButton_Checked" />
+            <ToggleButton
+                Name="ToggleButtonHisto"
+                Content="Historique transactions"
+                Command="{Binding HistoCommand}"
+                Style="{StaticResource ToggleButtonStyle}" 
+                Checked="NavToggleButton_Checked" />
+            <ToggleButton
+                Name="ToggleButtonAdmin"
+                Content="Administration"
+                Command="{Binding AdminCommand}"
+                Style="{StaticResource ToggleButtonStyle}" 
+                Checked="NavToggleButton_Checked" />
+        </StackPanel>
 
-        <Label Grid.Row="0" Content="CRUD operation in SQLite" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" />
-
-        <DataGrid x:Name="LivresDG" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Margin="5" >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Ean" Binding="{Binding Ean}" />
-                <DataGridTextColumn Header="Titre" Binding="{Binding Titre}" />
-                <DataGridTextColumn Header="Auteurs" Binding="{Binding Auteurs}" />
-                <DataGridTextColumn Header="Fournisseur" Binding="{Binding Fournisseur}" />
-                <DataGridTextColumn Header="Stock" Binding="{Binding Stock}" />
-                <DataGridTextColumn Header="Editeur" Binding="{Binding Editeur}" />
-                <DataGridTextColumn Header="Categorie" Binding="{Binding Categorie}" />
-                <DataGridTextColumn Header="Date de publication" Binding="{Binding DatePublication}" />
-                <DataGridTextColumn Header="Disponibilité" Binding="{Binding Disponibilite}" />
-                <DataGridTextColumn Header="Poids" Binding="{Binding Poids}" />
-                <DataGridTextColumn Header="Prix de vente" Binding="{Binding PrixVente}" />
-                <DataGridTextColumn Header="Prix neuf" Binding="{Binding PrixNeuf}" />
-                <DataGridTextColumn Header="Taux TVA" Binding="{Binding TvaTaux}" />
-                <DataGridTextColumn Header="Montant TVA" Binding="{Binding TvaMontant}" />
-                <DataGridTextColumn Header="Occasion" Binding="{Binding Occasion}" />
-            </DataGrid.Columns>
-        </DataGrid>
-    </Grid>
+        <ContentControl x:Name="Menu" DockPanel.Dock="Top" Content="{Binding SelectedMenuViewModel}"/>
+        <ContentControl x:Name="Pages" DockPanel.Dock="Right" Content="{Binding SelectedContentViewModel}"/>
+    </DockPanel>
 </Window>

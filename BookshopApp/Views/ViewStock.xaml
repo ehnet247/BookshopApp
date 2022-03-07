@@ -6,25 +6,17 @@
              xmlns:local="clr-namespace:BookshopApp.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <DockPanel>
-        <DataGrid x:Name="DGStock" ItemsSource="{Binding DataSource}" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Margin="5" >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Ean" Binding="{Binding Ean}" />
-                <DataGridTextColumn Header="Titre" Binding="{Binding Titre}" />
-                <DataGridTextColumn Header="Auteurs" Binding="{Binding Auteurs}" />
-                <DataGridTextColumn Header="Fournisseur" Binding="{Binding Fournisseur}" />
-                <DataGridTextColumn Header="Stock" Binding="{Binding Stock}" />
-                <DataGridTextColumn Header="Editeur" Binding="{Binding Editeur}" />
-                <DataGridTextColumn Header="Categorie" Binding="{Binding Categorie}" />
-                <DataGridTextColumn Header="Date de publication" Binding="{Binding DatePublication}" />
-                <DataGridTextColumn Header="Disponibilité" Binding="{Binding Disponibilite}" />
-                <DataGridTextColumn Header="Poids" Binding="{Binding Poids}" />
-                <DataGridTextColumn Header="Prix de vente" Binding="{Binding PrixVente}" />
-                <DataGridTextColumn Header="Prix neuf" Binding="{Binding PrixNeuf}" />
-                <DataGridTextColumn Header="Taux TVA" Binding="{Binding TvaTaux}" />
-                <DataGridTextColumn Header="Montant TVA" Binding="{Binding TvaMontant}" />
-                <DataGridTextColumn Header="Occasion" Binding="{Binding Occasion}" />
-            </DataGrid.Columns>
-        </DataGrid>
+    <DockPanel >
+        <TabControl DockPanel.Dock="Top">
+            <TabItem Header="Recherche" >
+                <ContentControl x:Name="StockRecherche" DockPanel.Dock="Top" Content="ViewModelContentStockRecherche"/>
+            </TabItem>
+            <TabItem Header="Consultation" >
+                <ContentControl x:Name="StockConsult" DockPanel.Dock="Top" Content="ViewModelContentStockConsult"/>
+            </TabItem>
+            <TabItem Header="Modification" >
+                <ContentControl x:Name="StockModif" DockPanel.Dock="Top" Content="ViewModelContentStockModif"/>
+            </TabItem>
+        </TabControl>
     </DockPanel>
 </UserControl>

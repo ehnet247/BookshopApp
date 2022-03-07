@@ -7,7 +7,39 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\ViewAchat.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ViewCaisse.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ViewMenuStock.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ViewStock.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ViewAchat.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ViewCaisse.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ViewMenuCaisse.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ViewMenuStock.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ViewStockConsult.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ViewStock.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
