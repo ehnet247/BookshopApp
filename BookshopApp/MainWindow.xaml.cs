@@ -23,12 +23,14 @@ namespace BookshopApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        public readonly string StartupTab = "Stock";
 
         public MainWindow()
         {
             InitializeComponent();
             this.DataContext = new ViewModelNavigation();
             GetLivres();
+            CheckTab(StartupTab);
         }
 
         private void GetLivres()
@@ -49,6 +51,7 @@ namespace BookshopApp
                 }
             }
         }
+
         private void UncheckTabsExcept(string selectedTab)
         {
             foreach (var item in NavPanel.Children)
@@ -58,6 +61,19 @@ namespace BookshopApp
                     if (((ToggleButton)item).Content.ToString() != selectedTab)
                     {
                         ((ToggleButton)item).IsChecked = false;
+                    }
+            }
+        }
+
+        private void CheckTab(string selectedTab)
+        {
+            foreach (var item in NavPanel.Children)
+            {
+                Type refType = typeof(ToggleButton);
+                if (item.GetType() == refType)
+                    if (((ToggleButton)item).Content.ToString() == selectedTab)
+                    {
+                        ((ToggleButton)item).IsChecked = true;
                     }
             }
         }

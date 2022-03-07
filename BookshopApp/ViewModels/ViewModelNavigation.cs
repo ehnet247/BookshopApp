@@ -6,16 +6,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace BookshopApp.ViewModels
 {
-    internal class ViewModelNavigation : INotifyPropertyChanged
+    internal class ViewModelNavigation : ObservableRecipient
     {
 
         public ICommand CaisseCommand { get; set; }
         public ICommand AchatCommand { get; set; }
         public ICommand CdeClientCommand { get; set; }
         public ICommand StockCommand { get; set; }
+        public ICommand StockConsultCommand { get; set; }
+        public ICommand StockModifCommand { get; set; }
+        public ICommand StockRechercheCommand { get; set; }
         public ICommand HistoCommand { get; set; }
         public ICommand AdminCommand { get; set; }
 
@@ -64,7 +68,10 @@ namespace BookshopApp.ViewModels
             CaisseCommand = new BaseCommand(OpenCaisse);
             AchatCommand = new BaseCommand(OpenAchat);
             CdeClientCommand = new BaseCommand(OpenCdeClient);
+            StockConsultCommand = new BaseCommand(OpenStockConsult);
             StockCommand = new BaseCommand(OpenStock);
+            StockModifCommand = new BaseCommand(OpenStockModif);
+            StockRechercheCommand = new BaseCommand(OpenStockRecherche);
             HistoCommand = new BaseCommand(OpenHisto);
             AdminCommand = new BaseCommand(OpenAdmin);
 
@@ -98,11 +105,37 @@ namespace BookshopApp.ViewModels
 
         }
 
+        private void OpenStockConsult(object obj)
+
+        {
+
+            SelectedContentViewModel = new ViewModelContentStockConsult();
+            SelectedMenuViewModel = new ViewModelMenuStock();
+
+        }
+
         private void OpenStock(object obj)
 
         {
 
-            SelectedContentViewModel = new ViewModelContentStock();
+            OpenStockConsult(obj);
+
+        }
+
+        private void OpenStockModif(object obj)
+
+        {
+
+            SelectedContentViewModel = new ViewModelContentStockModif();
+            SelectedMenuViewModel = new ViewModelMenuStock();
+
+        }
+
+        private void OpenStockRecherche(object obj)
+
+        {
+
+            SelectedContentViewModel = new ViewModelContentStockRecherche();
             SelectedMenuViewModel = new ViewModelMenuStock();
 
         }
@@ -126,9 +159,9 @@ namespace BookshopApp.ViewModels
         }
         #endregion
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        //public event PropertyChangedEventHandler PropertyChanged;
 
-        private void OnPropertyChanged(string propName)
+        /*private void OnPropertyChanged(string propName)
 
         {
 
@@ -140,7 +173,7 @@ namespace BookshopApp.ViewModels
 
             }
 
-        }
+        }*/
 
     }
 
