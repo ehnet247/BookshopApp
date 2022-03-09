@@ -17,7 +17,7 @@ namespace BookshopApp.ViewModels
         public ICommand AchatCommand { get; set; }
         public ICommand CdeClientCommand { get; set; }
         public ICommand StockCommand { get; set; }
-        public ICommand StockConsultCommand { get; set; }
+        public ICommand StockReceptionCommand { get; set; }
         public ICommand StockModifCommand { get; set; }
         public ICommand StockRechercheCommand { get; set; }
         public ICommand HistoCommand { get; set; }
@@ -68,10 +68,7 @@ namespace BookshopApp.ViewModels
             CaisseCommand = new BaseCommand(OpenCaisse);
             AchatCommand = new BaseCommand(OpenAchat);
             CdeClientCommand = new BaseCommand(OpenCdeClient);
-            StockConsultCommand = new BaseCommand(OpenStockConsult);
             StockCommand = new BaseCommand(OpenStock);
-            StockModifCommand = new BaseCommand(OpenStockModif);
-            StockRechercheCommand = new BaseCommand(OpenStockRecherche);
             HistoCommand = new BaseCommand(OpenHisto);
             AdminCommand = new BaseCommand(OpenAdmin);
 
@@ -105,11 +102,11 @@ namespace BookshopApp.ViewModels
 
         }
 
-        private void OpenStockConsult(object obj)
+        private void OpenStockReception(object obj)
 
         {
 
-            SelectedContentViewModel = new ViewModelContentStockConsult();
+            SelectedContentViewModel = new ViewModelContentStockReception();
             SelectedMenuViewModel = new ViewModelMenuStock();
 
         }
@@ -118,7 +115,8 @@ namespace BookshopApp.ViewModels
 
         {
 
-            OpenStockConsult(obj);
+            SelectedContentViewModel = new ViewModelContentStock();
+            SelectedMenuViewModel = new ViewModelMenuStock();
 
         }
 

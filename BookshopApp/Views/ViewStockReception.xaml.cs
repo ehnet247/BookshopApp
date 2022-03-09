@@ -19,12 +19,12 @@ using System.Windows.Shapes;
 namespace BookshopApp.Views
 {
     /// <summary>
-    /// Interaction logic for StockViewConsult.xaml
+    /// Interaction logic for StockViewReception.xaml
     /// </summary>
-    public partial class ViewStockConsult : UserControl
+    public partial class ViewStockReception : UserControl
     {
 
-        public ViewStockConsult()
+        public ViewStockReception()
         {
             InitializeComponent();
         }

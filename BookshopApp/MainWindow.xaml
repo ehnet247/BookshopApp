@@ -49,9 +49,9 @@
             <uc:ViewStockRecherche />
 
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:ViewModelContentStockConsult}">
+        <DataTemplate DataType="{x:Type vm:ViewModelContentStockReception}">
 
-            <uc:ViewStockConsult />
+            <uc:ViewStockReception />
 
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:ViewModelContentStockModif}">

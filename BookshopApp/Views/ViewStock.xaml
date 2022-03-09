@@ -3,19 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:BookshopApp.Views"
+             xmlns:uc="clr-namespace:BookshopApp.Views" xmlns:vm="clr-namespace:BookshopApp.ViewModels" d:DataContext="{d:DesignInstance Type=vm:ViewModelStockNavigation}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type vm:ViewModelContentStockRecherche}">
+
+            <uc:ViewStockRecherche />
+
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ViewModelContentStockModif}">
+
+            <uc:ViewStockModif />
+
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ViewModelContentStockReception}">
+
+            <uc:ViewStockReception />
+
+        </DataTemplate>
+    </UserControl.Resources>
     <DockPanel >
-        <TabControl DockPanel.Dock="Top">
+        <TabControl Name="TabControlStock" DockPanel.Dock="Top" >
             <TabItem Header="Recherche" >
-                <ContentControl x:Name="StockRecherche" DockPanel.Dock="Top" Content="ViewModelContentStockRecherche"/>
-            </TabItem>
-            <TabItem Header="Consultation" >
-                <ContentControl x:Name="StockConsult" DockPanel.Dock="Top" Content="ViewModelContentStockConsult"/>
+                <ContentControl x:Name="TabRecherche" DockPanel.Dock="Top" Content="{Binding StockRechercheTabContent}"/>
             </TabItem>
             <TabItem Header="Modification" >
-                <ContentControl x:Name="StockModif" DockPanel.Dock="Top" Content="ViewModelContentStockModif"/>
+                <ContentControl x:Name="TabModif" DockPanel.Dock="Top" Content="{Binding StockModifTabContent}"/>
+            </TabItem>
+            <TabItem Header="Reception" >
+                <ContentControl x:Name="TabReception" DockPanel.Dock="Top" Content="{Binding StockReceptionTabContent}"/>
             </TabItem>
         </TabControl>
     </DockPanel>

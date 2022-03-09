@@ -1,4 +1,5 @@
 ﻿using BookshopApp.Model;
+using BookshopApp.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections;
@@ -27,6 +28,7 @@ namespace BookshopApp.Views
         public ViewStock()
         {
             InitializeComponent();
+            this.DataContext = new ViewModelStockNavigation();
         }
     }
 }

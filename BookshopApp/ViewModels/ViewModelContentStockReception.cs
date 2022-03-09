@@ -1,15 +1,17 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections;
-using CommunityToolkit.Mvvm.ComponentModel;
 using BookshopApp.Model;
+using BookshopApp.Views;
+using CommunityToolkit.Mvvm.ComponentModel;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace BookshopApp.ViewModels
 {
-    internal class ViewModelContentStockRecherche : ObservableRecipient
+    internal class ViewModelContentStockReception : ObservableRecipient
     {
         private IEnumerable dataSource;
         private LivreDbContext DbContext;
@@ -26,7 +28,7 @@ namespace BookshopApp.ViewModels
             }
         }
 
-        public ViewModelContentStockRecherche()
+        public ViewModelContentStockReception()
         {
             DbContext = new LivreDbContext();
             if (DbContext != null)

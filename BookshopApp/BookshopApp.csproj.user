@@ -36,7 +36,7 @@
     <Page Update="Views\ViewMenuStock.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\ViewStockConsult.xaml">
+    <Page Update="Views\ViewStockReception.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ViewStock.xaml">
