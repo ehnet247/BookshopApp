@@ -273,3 +273,4 @@ UIMockup/bin/Debug/net6.0-windows/ref/UIMockup.dll
 .vs/BookshopApp/DesignTimeBuild/.dtbcache.v2
 .vs/UIMockup/project-colors.json
 bin
+.vs
