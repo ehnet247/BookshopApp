@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BookshopApp.Views"
+             xmlns:vm="clr-namespace:BookshopApp.ViewModels" d:DataContext="{d:DesignInstance Type=vm:ViewModelContentStockRecherche}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel Orientation="Vertical">
@@ -36,14 +37,10 @@
                     <Label Content="Stock" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     <Grid Margin="5" x:Name="GridNouveau">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" MinWidth="100" />
                             <ColumnDefinition Width="Auto" MinWidth="100" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
                             <RowDefinition />
                             <RowDefinition />
                             <RowDefinition />
@@ -66,29 +63,23 @@
                         <Label Grid.Row="6" Grid.Column="0" Content="Categorie" />
                         <Label Grid.Row="7" Grid.Column="0" Content="Date de publication" />
                         <Label Grid.Row="8" Grid.Column="0" Content="Disponibilite" />
-                        <Label Grid.Row="9" Grid.Column="0" Content="Poids" />
-                        <Label Grid.Row="10" Grid.Column="0" Content="Prix de vente" />
-                        <Label Grid.Row="11" Grid.Column="0" Content="Prix neuf" />
-                        <Label Grid.Row="12" Grid.Column="0" Content="Taux TVA" />
-                        <Label Grid.Row="13" Grid.Column="0" Content="Montant TVA" />
-                        <Label Grid.Row="14" Grid.Column="0" Content="Occasion" />
+                        <Label Grid.Row="9" Grid.Column="0" Content="Prix de vente" />
+                        <Label Grid.Row="10" Grid.Column="0" Content="Prix neuf" />
+                        <Label Grid.Row="11" Grid.Column="0" Content="Occasion" />
 
-                        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Ean}" />
-                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Titre}" />
-                        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Auteurs}" />
-                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Fournisseur}" />
-                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Stock}" />
-                        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Editeur}" />
-                        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Categorie}" />
-                        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding DatePublication}" />
-                        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Disponibilite}" />
-                        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Poids}" />
-                        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding PrixVente}" />
-                        <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding PrixNeuf}" />
-                        <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding TvaTaux}" />
-                        <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding TvaMontant}" />
-                        <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Occasion}" />
-                        <Button Grid.Row="15" Grid.ColumnSpan="2" Content="Ajouter" />
+                        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding LivreAChercher.Ean}" />
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LivreAChercher.Titre}" />
+                        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding LivreAChercher.Auteurs}" />
+                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding LivreAChercher.Fournisseur}" />
+                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding LivreAChercher.Stock}" />
+                        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding LivreAChercher.Editeur}" />
+                        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding LivreAChercher.Categorie}" />
+                        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding LivreAChercher.DatePublication}" />
+                        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding LivreAChercher.Disponibilite}" />
+                        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding LivreAChercher.PrixVente}" />
+                        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding LivreAChercher.PrixNeuf}" />
+                        <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding LivreAChercher.Occasion}" />
+                        <Button Grid.Row="12" Grid.ColumnSpan="2" Content="Rechercher" Command="{Binding CommandRechercher}" />
                     </Grid>
                 </StackPanel>
             </Border>
