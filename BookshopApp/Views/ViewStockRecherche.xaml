@@ -67,18 +67,18 @@
                         <Label Grid.Row="10" Grid.Column="0" Content="Prix neuf" />
                         <Label Grid.Row="11" Grid.Column="0" Content="Occasion" />
 
-                        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding LivreAChercher.Ean}" />
-                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LivreAChercher.Titre}" />
-                        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding LivreAChercher.Auteurs}" />
-                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding LivreAChercher.Fournisseur}" />
-                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding LivreAChercher.Stock}" />
-                        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding LivreAChercher.Editeur}" />
-                        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding LivreAChercher.Categorie}" />
-                        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding LivreAChercher.DatePublication}" />
-                        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding LivreAChercher.Disponibilite}" />
-                        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding LivreAChercher.PrixVente}" />
-                        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding LivreAChercher.PrixNeuf}" />
-                        <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding LivreAChercher.Occasion}" />
+                        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding LivreStringAChercher.Ean}" />
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LivreStringAChercher.Titre}" />
+                        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding LivreStringAChercher.Auteurs}" />
+                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding LivreStringAChercher.Fournisseur}" />
+                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding LivreStringAChercher.Stock}" />
+                        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding LivreStringAChercher.Editeur}" />
+                        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding LivreStringAChercher.Categorie}" />
+                        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding LivreStringAChercher.DatePublication}" />
+                        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding LivreStringAChercher.Disponibilite}" />
+                        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding LivreStringAChercher.PrixVente}" />
+                        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding LivreStringAChercher.PrixNeuf}" />
+                        <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding LivreStringAChercher.Occasion}" />
                         <Button Grid.Row="12" Grid.ColumnSpan="2" Content="Rechercher" Command="{Binding CommandRechercher}" />
                     </Grid>
                 </StackPanel>

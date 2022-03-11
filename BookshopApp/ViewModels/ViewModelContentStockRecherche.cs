@@ -28,6 +28,7 @@ namespace BookshopApp.ViewModels
                 OnPropertyChanged("DataSource");
             }
         }
+
         private Livre livreAChercher;
         public Livre LivreAChercher
         {
@@ -42,11 +43,26 @@ namespace BookshopApp.ViewModels
             }
         }
 
+        private LivreString livreStringAChercher;
+        public LivreString LivreStringAChercher
+        {
+            get
+            {
+                return livreStringAChercher;
+            }
+            set
+            {
+                livreStringAChercher = value;
+                OnPropertyChanged("LivreStringAChercher");
+            }
+        }
+
         public ViewModelContentStockRecherche()
         {
             DbContext = new LivreDbContext();
             CommandRechercher = new BaseCommand(Rechercher);
             LivreAChercher = new Livre();
+            LivreStringAChercher = new LivreString(LivreAChercher);
             if (DbContext != null)
             {
                 DataSource = DbContext.Livres.ToList();
