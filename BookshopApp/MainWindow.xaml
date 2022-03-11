@@ -93,37 +93,37 @@
             <ToggleButton
                 Name="ToggleButtonCaisse"
                 Content="Caisse"
-                Command="{Binding CaisseCommand}"
+                Command="{Binding CommandCaisse}"
                 Style="{StaticResource ToggleButtonStyle}" 
                 Checked="NavToggleButton_Checked" />
             <ToggleButton
                 Name="ToggleButtonAchatOccasion"
                 Content="Achat occasion"
-                Command="{Binding AchatCommand}"
+                Command="{Binding CommandAchat}"
                 Style="{StaticResource ToggleButtonStyle}"
                 Checked="NavToggleButton_Checked" />
             <ToggleButton
                 Name="ToggleButtonCommandesClient"
                 Content="Commandes client"
-                Command="{Binding CdeClientCommand}"
+                Command="{Binding CommandCdeClient}"
                 Style="{StaticResource ToggleButtonStyle}" 
                 Checked="NavToggleButton_Checked" />
             <ToggleButton
                 Name="ToggleButtonStock"
                 Content="Stock"
-                Command="{Binding StockCommand}"
+                Command="{Binding CommandStock}"
                 Style="{StaticResource ToggleButtonStyle}" 
                 Checked="NavToggleButton_Checked" />
             <ToggleButton
                 Name="ToggleButtonHisto"
                 Content="Historique transactions"
-                Command="{Binding HistoCommand}"
+                Command="{Binding CommandHisto}"
                 Style="{StaticResource ToggleButtonStyle}" 
                 Checked="NavToggleButton_Checked" />
             <ToggleButton
                 Name="ToggleButtonAdmin"
                 Content="Administration"
-                Command="{Binding AdminCommand}"
+                Command="{Binding CommandAdmin}"
                 Style="{StaticResource ToggleButtonStyle}" 
                 Checked="NavToggleButton_Checked" />
         </StackPanel>

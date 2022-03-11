@@ -13,15 +13,15 @@ namespace BookshopApp.ViewModels
     internal class ViewModelNavigation : ObservableRecipient
     {
 
-        public ICommand CaisseCommand { get; set; }
-        public ICommand AchatCommand { get; set; }
-        public ICommand CdeClientCommand { get; set; }
-        public ICommand StockCommand { get; set; }
-        public ICommand StockReceptionCommand { get; set; }
-        public ICommand StockModifCommand { get; set; }
-        public ICommand StockRechercheCommand { get; set; }
-        public ICommand HistoCommand { get; set; }
-        public ICommand AdminCommand { get; set; }
+        public ICommand CommandCaisse { get; set; }
+        public ICommand CommandAchat { get; set; }
+        public ICommand CommandCdeClient { get; set; }
+        public ICommand CommandStock { get; set; }
+        public ICommand CommandStockReception { get; set; }
+        public ICommand CommandStockModif { get; set; }
+        public ICommand CommandStockRecherche { get; set; }
+        public ICommand CommandHisto { get; set; }
+        public ICommand CommandAdmin { get; set; }
 
         private object selectedContentViewModel = new ViewModelContentStock();
         private object selectedMenuViewModel = new ViewModelMenuStock();
@@ -65,18 +65,17 @@ namespace BookshopApp.ViewModels
         public ViewModelNavigation()
 
         {
-            CaisseCommand = new BaseCommand(OpenCaisse);
-            AchatCommand = new BaseCommand(OpenAchat);
-            CdeClientCommand = new BaseCommand(OpenCdeClient);
-            StockCommand = new BaseCommand(OpenStock);
-            HistoCommand = new BaseCommand(OpenHisto);
-            AdminCommand = new BaseCommand(OpenAdmin);
+            CommandCaisse = new BaseCommand(OpenCaisse);
+            CommandAchat = new BaseCommand(OpenAchat);
+            CommandCdeClient = new BaseCommand(OpenCdeClient);
+            CommandStock = new BaseCommand(OpenStock);
+            CommandHisto = new BaseCommand(OpenHisto);
+            CommandAdmin = new BaseCommand(OpenAdmin);
 
         }
         #region Open methods
 
         private void OpenCaisse(object obj)
-
         {
 
             SelectedContentViewModel = new ViewModelContentCaisse();
@@ -85,7 +84,6 @@ namespace BookshopApp.ViewModels
         }
 
         private void OpenAchat(object obj)
-
         {
 
             SelectedContentViewModel = new ViewModelContentAchat();
@@ -94,7 +92,6 @@ namespace BookshopApp.ViewModels
         }
 
         private void OpenCdeClient(object obj)
-
         {
 
             SelectedContentViewModel = new ViewModelContentCdeClient();
@@ -103,7 +100,6 @@ namespace BookshopApp.ViewModels
         }
 
         private void OpenStockReception(object obj)
-
         {
 
             SelectedContentViewModel = new ViewModelContentStockReception();
@@ -112,7 +108,6 @@ namespace BookshopApp.ViewModels
         }
 
         private void OpenStock(object obj)
-
         {
 
             SelectedContentViewModel = new ViewModelContentStock();
