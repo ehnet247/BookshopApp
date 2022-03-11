@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Collections;
 using CommunityToolkit.Mvvm.ComponentModel;
 using BookshopApp.Model;
+using System.Windows.Input;
 
 namespace BookshopApp.ViewModels
 {
@@ -13,6 +14,8 @@ namespace BookshopApp.ViewModels
     {
         private IEnumerable dataSource;
         private LivreDbContext DbContext;
+        public ICommand CommandRechercher { get; set; }
+
         public IEnumerable DataSource
         {
             get
@@ -25,14 +28,33 @@ namespace BookshopApp.ViewModels
                 OnPropertyChanged("DataSource");
             }
         }
+        private Livre livreAChercher;
+        public Livre LivreAChercher
+        {
+            get
+            {
+                return livreAChercher;
+            }
+            set
+            {
+                livreAChercher = value;
+                OnPropertyChanged("LivreAChercher");
+            }
+        }
 
         public ViewModelContentStockRecherche()
         {
             DbContext = new LivreDbContext();
+            CommandRechercher = new BaseCommand(Rechercher);
+            LivreAChercher = new Livre();
             if (DbContext != null)
             {
                 DataSource = DbContext.Livres.ToList();
             }
+        }
+
+        private void Rechercher(object obj)
+        {
         }
     }
 }
