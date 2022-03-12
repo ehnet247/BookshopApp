@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace BookshopApp.ViewModels
 {
-    internal class ViewModelContentStockRecherche : ObservableRecipient
+    internal class ViewModelStockRecherche : ObservableRecipient
     {
         private IEnumerable dataSource;
         private LivreDbContext DbContext;
@@ -57,7 +57,7 @@ namespace BookshopApp.ViewModels
             }
         }
 
-        public ViewModelContentStockRecherche()
+        public ViewModelStockRecherche()
         {
             DbContext = new LivreDbContext();
             CommandRechercher = new BaseCommand(Rechercher);

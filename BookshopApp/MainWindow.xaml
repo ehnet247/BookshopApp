@@ -34,32 +34,32 @@
                     Text="{Binding}"/>
             </Grid>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:ViewModelContentCaisse}">
+        <DataTemplate DataType="{x:Type vm:ViewModelCaisse}">
 
             <uc:ViewCaisse />
 
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:ViewModelContentStock}">
+        <DataTemplate DataType="{x:Type vm:ViewModelStock}">
 
             <uc:ViewStock />
 
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:ViewModelContentStockRecherche}">
+        <DataTemplate DataType="{x:Type vm:ViewModelStockRecherche}">
 
             <uc:ViewStockRecherche />
 
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:ViewModelContentStockReception}">
+        <DataTemplate DataType="{x:Type vm:ViewModelStockReception}">
 
             <uc:ViewStockReception />
 
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:ViewModelContentStockModif}">
+        <DataTemplate DataType="{x:Type vm:ViewModelStockModif}">
 
             <uc:ViewStockModif />
 
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:ViewModelContentAchat}">
+        <DataTemplate DataType="{x:Type vm:ViewModelAchat}">
 
             <uc:ViewAchat />
 

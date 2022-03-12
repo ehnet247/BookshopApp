@@ -17,7 +17,7 @@ namespace BookshopApp.ViewModels
         public object StockModifTabContent { get; set; }
         public object StockReceptionTabContent { get; set; }
 
-        private object selectedTabViewModel = new ViewModelContentStockRecherche();
+        private object selectedTabViewModel = new ViewModelStockRecherche();
 
         public object SelectedTabViewModel
 
@@ -39,9 +39,9 @@ namespace BookshopApp.ViewModels
 
         public ViewModelStockNavigation()
         {
-            StockRechercheTabContent = new ViewModelContentStockRecherche();
-            StockModifTabContent = new ViewModelContentStockModif();
-            StockReceptionTabContent = new ViewModelContentStockReception();
+            StockRechercheTabContent = new ViewModelStockRecherche();
+            StockModifTabContent = new ViewModelStockModif();
+            StockReceptionTabContent = new ViewModelStockReception();
         }
 
     }

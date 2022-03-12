@@ -7,11 +7,11 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace BookshopApp.ViewModels
 {
-    public class ViewModelContentAchat : ObservableRecipient
+    public class ViewModelAdmin : ObservableRecipient
     {
-        public override string ToString()
+        public string ToString()
         {
-            return "Achat";
+            return "Admin";
         }
     }
 }

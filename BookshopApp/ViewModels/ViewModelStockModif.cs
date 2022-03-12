@@ -9,7 +9,7 @@ using BookshopApp.Model;
 
 namespace BookshopApp.ViewModels
 {
-    internal class ViewModelContentStockModif : ObservableRecipient
+    internal class ViewModelStockModif : ObservableRecipient
     {
         private IEnumerable dataSource;
         private LivreDbContext DbContext;
@@ -26,7 +26,7 @@ namespace BookshopApp.ViewModels
             }
         }
 
-        public ViewModelContentStockModif()
+        public ViewModelStockModif()
         {
             DbContext = new LivreDbContext();
             if (DbContext != null)

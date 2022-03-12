@@ -7,11 +7,11 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace BookshopApp.ViewModels
 {
-    public class ViewModelContentHisto : ObservableRecipient
+    public class ViewModelCdeClient : ObservableRecipient
     {
         public override string ToString()
         {
-            return "Histo";
+            return "CdeClient";
         }
     }
 }

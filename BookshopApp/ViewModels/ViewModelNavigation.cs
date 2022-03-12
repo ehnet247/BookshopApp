@@ -23,7 +23,7 @@ namespace BookshopApp.ViewModels
         public ICommand CommandHisto { get; set; }
         public ICommand CommandAdmin { get; set; }
 
-        private object selectedContentViewModel = new ViewModelContentStock();
+        private object selectedContentViewModel = new ViewModelStock();
         private object selectedMenuViewModel = new ViewModelMenuStock();
 
         public object SelectedContentViewModel
@@ -78,7 +78,7 @@ namespace BookshopApp.ViewModels
         private void OpenCaisse(object obj)
         {
 
-            SelectedContentViewModel = new ViewModelContentCaisse();
+            SelectedContentViewModel = new ViewModelCaisse();
             SelectedMenuViewModel = new ViewModelMenuCaisse();
 
         }
@@ -86,7 +86,7 @@ namespace BookshopApp.ViewModels
         private void OpenAchat(object obj)
         {
 
-            SelectedContentViewModel = new ViewModelContentAchat();
+            SelectedContentViewModel = new ViewModelAchat();
             SelectedMenuViewModel = new ViewModelMenuAchat();
 
         }
@@ -94,7 +94,7 @@ namespace BookshopApp.ViewModels
         private void OpenCdeClient(object obj)
         {
 
-            SelectedContentViewModel = new ViewModelContentCdeClient();
+            SelectedContentViewModel = new ViewModelCdeClient();
             SelectedMenuViewModel = new ViewModelMenuCdeClient();
 
         }
@@ -102,7 +102,7 @@ namespace BookshopApp.ViewModels
         private void OpenStockReception(object obj)
         {
 
-            SelectedContentViewModel = new ViewModelContentStockReception();
+            SelectedContentViewModel = new ViewModelStockReception();
             SelectedMenuViewModel = new ViewModelMenuStock();
 
         }
@@ -110,7 +110,7 @@ namespace BookshopApp.ViewModels
         private void OpenStock(object obj)
         {
 
-            SelectedContentViewModel = new ViewModelContentStock();
+            SelectedContentViewModel = new ViewModelStock();
             SelectedMenuViewModel = new ViewModelMenuStock();
 
         }
@@ -119,7 +119,7 @@ namespace BookshopApp.ViewModels
 
         {
 
-            SelectedContentViewModel = new ViewModelContentStockModif();
+            SelectedContentViewModel = new ViewModelStockModif();
             SelectedMenuViewModel = new ViewModelMenuStock();
 
         }
@@ -128,7 +128,7 @@ namespace BookshopApp.ViewModels
 
         {
 
-            SelectedContentViewModel = new ViewModelContentStockRecherche();
+            SelectedContentViewModel = new ViewModelStockRecherche();
             SelectedMenuViewModel = new ViewModelMenuStock();
 
         }
@@ -137,7 +137,7 @@ namespace BookshopApp.ViewModels
 
         {
 
-            SelectedContentViewModel = new ViewModelContentHisto();
+            SelectedContentViewModel = new ViewModelHisto();
             SelectedMenuViewModel = new ViewModelMenuHisto();
 
         }
@@ -146,7 +146,7 @@ namespace BookshopApp.ViewModels
 
         {
 
-            SelectedContentViewModel = new ViewModelContentAdmin();
+            SelectedContentViewModel = new ViewModelAdmin();
             SelectedMenuViewModel = new ViewModelMenuAdmin();
 
         }

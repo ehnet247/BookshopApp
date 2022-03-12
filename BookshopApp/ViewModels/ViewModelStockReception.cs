@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace BookshopApp.ViewModels
 {
-    internal class ViewModelContentStockReception : ObservableRecipient
+    internal class ViewModelStockReception : ObservableRecipient
     {
         private Livre nouveauLivre;
         public Livre NouveauLivre
@@ -41,7 +41,7 @@ namespace BookshopApp.ViewModels
             }
         }
 
-        public ViewModelContentStockReception()
+        public ViewModelStockReception()
         {
             DbContext = new LivreDbContext();
             if (DbContext != null)
