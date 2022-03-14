@@ -15,9 +15,9 @@
                 <DataGridTextColumn Header="Fournisseur" Binding="{Binding Fournisseur}" />
                 <DataGridTextColumn Header="Stock" Binding="{Binding Stock}" />
                 <DataGridTextColumn Header="Editeur" Binding="{Binding Editeur}" />
-                <DataGridTextColumn Header="Categorie" Binding="{Binding Categorie}" />
+                <DataGridTextColumn Header="Catégorie" Binding="{Binding Categorie}" />
                 <DataGridTextColumn Header="Date de publication" Binding="{Binding DatePublication}" />
-                <DataGridTextColumn Header="Disponibilite" Binding="{Binding Disponibilite}" />
+                <DataGridTextColumn Header="Disponibilité" Binding="{Binding Disponibilite}" />
                 <DataGridTextColumn Header="Poids" Binding="{Binding Poids}" />
                 <DataGridTextColumn Header="Prix de vente" Binding="{Binding PrixVente}" />
                 <DataGridTextColumn Header="Prix neuf" Binding="{Binding PrixNeuf}" />
@@ -77,7 +77,7 @@
                         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LivreStringAAjouter.Titre}" />
                         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding LivreStringAAjouter.Auteurs}" />
                         <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding LivreStringAAjouter.Fournisseur}" />
-                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding LivreStringAAjouter.Stock}" />
+                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding LivreStringAAjouter.Quantite}" />
                         <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding LivreStringAAjouter.Editeur}" />
                         <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding LivreStringAAjouter.Categorie}" />
                         <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding LivreStringAAjouter.DatePublication}" />

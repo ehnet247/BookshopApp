@@ -71,7 +71,7 @@
                         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LivreStringAChercher.Titre}" />
                         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding LivreStringAChercher.Auteurs}" />
                         <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding LivreStringAChercher.Fournisseur}" />
-                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding LivreStringAChercher.Stock}" />
+                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding LivreStringAChercher.Quantite}" />
                         <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding LivreStringAChercher.Editeur}" />
                         <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding LivreStringAChercher.Categorie}" />
                         <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding LivreStringAChercher.DatePublication}" />

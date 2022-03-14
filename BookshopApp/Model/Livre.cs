@@ -54,7 +54,7 @@ namespace BookshopApp.Model
         public string Titre { get; set; }
         public string Auteurs { get; set; }
         public string Fournisseur { get; set; }
-        public string Stock { get; set; }
+        public string Quantite { get; set; }
         public string Editeur { get; set; }
         public string Categorie { get; set; }
         public string DatePublication { get; set; }
@@ -83,9 +83,9 @@ namespace BookshopApp.Model
             Auteurs = source.Auteurs;
             Fournisseur = source.Fournisseur;
             if (Empty)
-                Stock = string.Empty;
+                Quantite = string.Empty;
             else
-                Stock = source.Stock.ToString();
+                Quantite = source.Stock.ToString();
             Editeur = source.Editeur;
             Categorie = source.Categorie;
             if (Empty)
