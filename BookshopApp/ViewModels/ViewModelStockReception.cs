@@ -12,22 +12,36 @@ namespace BookshopApp.ViewModels
 {
     internal class ViewModelStockReception : ObservableRecipient
     {
-        private Livre nouveauLivre;
-        public Livre NouveauLivre
+        private LivreDbContext DbContext;
+        public ICommand CommandAjouter { get; set; }
+        private Livre livreAAjouter;
+        public Livre LivreAAjouter
         {
             get
             {
-                return nouveauLivre;
+                return livreAAjouter;
             }
             set
             {
-                nouveauLivre = value;
-                OnPropertyChanged("NouveauLivre");
+                livreAAjouter = value;
+                OnPropertyChanged("LivreAChercher");
+            }
+        }
+
+        private LivreString livreStringAAjouter;
+        public LivreString LivreStringAAjouter
+        {
+            get
+            {
+                return livreStringAAjouter;
+            }
+            set
+            {
+                livreStringAAjouter = value;
+                OnPropertyChanged("LivreStringAAjouter");
             }
         }
         private IEnumerable dataSource;
-        private LivreDbContext DbContext;
-        public ICommand CommandAjouter { get; set; }
         public IEnumerable DataSource
         {
             get
@@ -50,23 +64,171 @@ namespace BookshopApp.ViewModels
             }
             
             CommandAjouter = new BaseCommand(AjouterLivre);
-        }
-
-        public void AjouterLivre()
-        {
-            if (DbContext != null)
-            {
-                DbContext.Livres.Add(NouveauLivre);
-            }
+            LivreAAjouter = new Livre();
         }
 
         private void AjouterLivre(object obj)
         {
             if (DbContext != null)
             {
-                DbContext.Livres.Add(NouveauLivre);
-                DbContext.SaveChanges();
+                // Verifier que les champs obligatoires soient renseignes
+                if (ChampsAvantAjoutCompletes() == false)
+                {
+                    // Afficher un message d'erreur
+                }
+                else if (CreateLivreFromLivreString(LivreStringAAjouter))
+                {
+                        // Si le livre fait partie des references, ajouter la quantite recue
+                        var existingEan = DbContext.Livres.Count(a => a.Ean == LivreAAjouter.Ean);
+                        if (existingEan == 0)
+                        {
+                            DbContext.Livres.Add(LivreAAjouter);
+                        }
+                        else
+                        {
+                            // Sinon, l'ajouter aux references et completer les informations si besoin
+                            DbContext.Livres.Add(LivreAAjouter);
+                        }
+
+                        DbContext.SaveChanges();
+                    }
             }
+        }
+
+        private bool CreateLivreFromLivreString(LivreString livreStringAAjouter)
+        {
+            bool ManageToCreate = true;
+            Livre livreAAjouter = new Livre();
+            if (UInt64.TryParse(LivreStringAAjouter.Ean, out ulong ean) == true)
+            {
+                livreAAjouter.Ean = ean;
+            }
+            else
+            {
+                ManageToCreate = false;
+                // Afficher un message d'erreur
+            }
+
+            if (UInt16.TryParse(LivreStringAAjouter.Stock, out ushort stock) == true)
+            {
+                livreAAjouter.Stock = stock;
+            }
+            else
+            {
+                ManageToCreate = false;
+                // Afficher un message d'erreur
+            }
+
+            if (DateTime.TryParse(LivreStringAAjouter.Stock, out DateTime datePublication) == true)
+            {
+                livreAAjouter.DatePublication = datePublication;
+            }
+            else
+            {
+                ManageToCreate = false;
+                // Afficher un message d'erreur
+            }
+
+            if (UInt16.TryParse(LivreStringAAjouter.Stock, out ushort poids) == true)
+            {
+                livreAAjouter.Poids = poids;
+            }
+            else
+            {
+                ManageToCreate = false;
+                // Afficher un message d'erreur
+            }
+
+            if (Double.TryParse(LivreStringAAjouter.Stock, out double prixVente) == true)
+            {
+                livreAAjouter.PrixVente = prixVente;
+            }
+            else
+            {
+                ManageToCreate = false;
+                // Afficher un message d'erreur
+            }
+
+            if (Double.TryParse(LivreStringAAjouter.Stock, out double prixNeuf) == true)
+            {
+                livreAAjouter.PrixNeuf = prixNeuf;
+            }
+            else
+            {
+                ManageToCreate = false;
+                // Afficher un message d'erreur
+            }
+
+            if (float.TryParse(LivreStringAAjouter.Stock, out float tvaTaux) == true)
+            {
+                livreAAjouter.TvaTaux = tvaTaux;
+            }
+            else
+            {
+                ManageToCreate = false;
+                // Afficher un message d'erreur
+            }
+
+            if (float.TryParse(LivreStringAAjouter.Stock, out float tvaMontant) == true)
+            {
+                livreAAjouter.TvaMontant = tvaMontant;
+            }
+            else
+            {
+                ManageToCreate = false;
+                // Afficher un message d'erreur
+            }
+
+            bool occasion = false;
+            if ((livreStringAAjouter.Occasion.ToLower() == "oui") || (livreStringAAjouter.Occasion == "1"))
+            {
+                occasion = true;
+            }
+            livreAAjouter.Occasion = occasion;
+
+            if (UInt16.TryParse(LivreStringAAjouter.Stock, out ushort pages) == true)
+            {
+                livreAAjouter.Pages = pages;
+            }
+            else
+            {
+                ManageToCreate = false;
+                // Afficher un message d'erreur
+            }
+
+            if (UInt16.TryParse(LivreStringAAjouter.Stock, out ushort tomes) == true)
+            {
+                livreAAjouter.Tome = tomes;
+            }
+            else
+            {
+                ManageToCreate = false;
+                // Afficher un message d'erreur
+            }
+
+            bool coupDeCoeur = false;
+            if ((livreStringAAjouter.CoupDeCoeur.ToLower() == "oui") || (livreStringAAjouter.CoupDeCoeur == "1"))
+            {
+                coupDeCoeur = true;
+            }
+            livreAAjouter.CoupDeCoeur = coupDeCoeur;
+
+            if (ManageToCreate == true)
+            {
+                LivreAAjouter = livreAAjouter;
+            }
+            return ManageToCreate;
+        }
+
+        private bool ChampsAvantAjoutCompletes()
+        {
+            bool returnValue = false;
+            if ((LivreStringAAjouter.Ean != string.Empty)
+                && (LivreStringAAjouter.Stock != string.Empty))
+            {
+                returnValue = true;
+            }
+            return returnValue;
         }
     }
 }
