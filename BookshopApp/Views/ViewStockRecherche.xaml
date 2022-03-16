@@ -4,27 +4,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BookshopApp.Views"
-             xmlns:vm="clr-namespace:BookshopApp.ViewModels" d:DataContext="{d:DesignInstance Type=vm:ViewModelStockRecherche}"
+             xmlns:vm="clr-namespace:BookshopApp.ViewModels" xmlns:model="clr-namespace:BookshopApp.Model" d:DataContext="{d:DesignInstance Type=vm:ViewModelStockRecherche}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel Orientation="Vertical">
         <DataGrid x:Name="DGStock" ItemsSource="{Binding DataSource}" AutoGenerateColumns="False" IsReadOnly="True" Margin="5" Height="200" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Ean" Binding="{Binding Ean}" />
-                <DataGridTextColumn Header="Titre" Binding="{Binding Titre}" />
-                <DataGridTextColumn Header="Auteurs" Binding="{Binding Auteurs}" />
-                <DataGridTextColumn Header="Fournisseur" Binding="{Binding Fournisseur}" />
-                <DataGridTextColumn Header="Stock" Binding="{Binding Stock}" />
-                <DataGridTextColumn Header="Editeur" Binding="{Binding Editeur}" />
-                <DataGridTextColumn Header="Categorie" Binding="{Binding Categorie}" />
-                <DataGridTextColumn Header="Date de publication" Binding="{Binding DatePublication}" />
-                <DataGridTextColumn Header="Disponibilite" Binding="{Binding Disponibilite}" />
-                <DataGridTextColumn Header="Poids" Binding="{Binding Poids}" />
-                <DataGridTextColumn Header="Prix de vente" Binding="{Binding PrixVente}" />
-                <DataGridTextColumn Header="Prix neuf" Binding="{Binding PrixNeuf}" />
-                <DataGridTextColumn Header="Taux TVA" Binding="{Binding TvaTaux}" />
-                <DataGridTextColumn Header="Montant TVA" Binding="{Binding TvaMontant}" />
-                <DataGridTextColumn Header="Occasion" Binding="{Binding Occasion}" />
+                <DataGridTextColumn Header="Ean" Binding="{Binding LivreString.Ean}" />
+                <DataGridTextColumn Header="Titre" Binding="{Binding LivreString.Titre}" />
+                <DataGridTextColumn Header="Auteurs" Binding="{Binding LivreString.Auteurs}" />
+                <DataGridTextColumn Header="Fournisseur" Binding="{Binding LivreString.Fournisseur}" />
+                <DataGridTextColumn Header="Stock" Binding="{Binding LivreString.Stock}" />
+                <DataGridTextColumn Header="Editeur" Binding="{Binding LivreString.Editeur}" />
+                <DataGridTextColumn Header="Categorie" Binding="{Binding LivreString.Categorie}" />
+                <DataGridTextColumn Header="Date de publication" Binding="{Binding LivreString.DatePublication}" />
+                <DataGridTextColumn Header="Disponibilite" Binding="{Binding LivreString.Disponibilite}" />
+                <DataGridTextColumn Header="Poids" Binding="{Binding LivreString.Poids}" />
+                <DataGridTextColumn Header="Prix de vente" Binding="{Binding LivreString.PrixVente}" />
+                <DataGridTextColumn Header="Prix neuf" Binding="{Binding LivreString.PrixNeuf}" />
+                <DataGridTextColumn Header="Taux TVA" Binding="{Binding LivreString.TvaTaux}" />
+                <DataGridTextColumn Header="Montant TVA" Binding="{Binding LivreString.TvaMontant}" />
+                <DataGridTextColumn Header="Occasion" Binding="{Binding LivreString.Occasion}" />
             </DataGrid.Columns>
         </DataGrid>
         <Grid >
