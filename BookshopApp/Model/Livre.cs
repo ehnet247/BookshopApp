@@ -32,6 +32,8 @@ namespace BookshopApp.Model
         public UInt16 Tome { get; set; }
         public bool CoupDeCoeur { get; set; }
         public string AvisLibraire { get; set; } // TEXT
+        [NotMapped]
+        public LivreString LivreString { get; set; }
 
         public Livre()
         {
@@ -45,34 +47,267 @@ namespace BookshopApp.Model
             CollEditoriale = string.Empty;
             AvisLibraire = string.Empty;
             CoupDeCoeur = false;
+            LivreString = new LivreString(this);
         }
     }
 
-    public class LivreString : Livre
+    public class LivreString
     {
-        public string Ean { get; set; }
-        public string Titre { get; set; }
-        public string Auteurs { get; set; }
-        public string Fournisseur { get; set; }
-        public string Quantite { get; set; }
-        public string Editeur { get; set; }
-        public string Categorie { get; set; }
-        public string DatePublication { get; set; }
-        public string Disponibilite { get; set; }
-        public string Poids { get; set; }
-        public string PrixVente { get; set; }
-        public string PrixNeuf { get; set; }
-        public string TvaTaux { get; set; }
-        public string TvaMontant { get; set; }
-        public string Occasion { get; set; }
-        public string CollEditoriale { get; set; }
+        public string Ean
+        {
+            get
+            {
+                return LivreSource.Ean.ToString();
+            }
+            set
+            {
+                ulong convertedValue;
+                ulong.TryParse(value, out convertedValue);
+                LivreSource.Ean = convertedValue;
+
+            }
+        }
+        public string Titre
+        {
+            get
+            {
+                return LivreSource.Titre;
+            }
+            set
+            {
+                LivreSource.Titre = value;
+            }
+        }
+        public string Auteurs
+        {
+            get
+            {
+                return LivreSource.Auteurs;
+            }
+            set
+            {
+                LivreSource.Auteurs = value;
+            }
+        }
+        public string Fournisseur
+        {
+            get
+            {
+                return LivreSource.Fournisseur;
+            }
+            set
+            {
+                LivreSource.Fournisseur = value;
+            }
+        }
+        public string Quantite
+        {
+            get
+            {
+                return LivreSource.Stock.ToString();
+            }
+            set
+            {
+                ushort convertedValue;
+                ushort.TryParse(value, out convertedValue);
+                LivreSource.Stock = convertedValue;
+
+            }
+        }
+        public string Editeur
+        {
+            get
+            {
+                return LivreSource.Editeur;
+            }
+            set
+            {
+                LivreSource.Editeur = value;
+            }
+        }
+        public string Categorie
+        {
+            get
+            {
+                return LivreSource.Categorie;
+            }
+            set
+            {
+                LivreSource.Categorie = value;
+            }
+        }
+        public string DatePublication
+        {
+            get
+            {
+                return LivreSource.Stock.ToString();
+            }
+            set
+            {
+                DateTime convertedValue;
+                DateTime.TryParse(value, out convertedValue);
+                LivreSource.DatePublication = convertedValue;
+
+            }
+        }
+        public string Disponibilite
+        {
+            get
+            {
+                return LivreSource.Disponibilite;
+            }
+            set
+            {
+                LivreSource.Disponibilite = value;
+            }
+        }
+        public string Poids
+        {
+            get
+            {
+                return LivreSource.Poids.ToString();
+            }
+            set
+            {
+                ushort convertedValue;
+                ushort.TryParse(value, out convertedValue);
+                LivreSource.Poids = convertedValue;
+
+            }
+        }
+        public string PrixVente
+        {
+            get
+            {
+                return LivreSource.PrixVente.ToString();
+            }
+            set
+            {
+                double convertedValue;
+                Double.TryParse(value, out convertedValue);
+                LivreSource.PrixVente = convertedValue;
+
+            }
+        }
+        public string PrixNeuf
+        {
+            get
+            {
+                return LivreSource.PrixNeuf.ToString();
+            }
+            set
+            {
+                double convertedValue;
+                Double.TryParse(value, out convertedValue);
+                LivreSource.PrixNeuf = convertedValue;
+
+            }
+        }
+        public string TvaTaux
+        {
+            get
+            {
+                return LivreSource.TvaTaux.ToString();
+            }
+            set
+            {
+                float convertedValue;
+                float.TryParse(value, out convertedValue);
+                LivreSource.TvaTaux = convertedValue;
+
+            }
+        }
+        public string TvaMontant
+        {
+            get
+            {
+                return LivreSource.TvaMontant.ToString();
+            }
+            set
+            {
+                double convertedValue;
+                Double.TryParse(value, out convertedValue);
+                LivreSource.TvaMontant = convertedValue;
+
+            }
+        }
+        public string Occasion
+        {
+            get
+            {
+                if (LivreSource.Occasion)
+                    return "Occasion";
+                else
+                    return "Neuf";
+            }
+            set
+            {
+                string newVal = value.ToLower();
+                if (newVal != "neuf")
+                {
+                    LivreSource.Occasion = true;
+                }
+                else
+                {
+                    LivreSource.Occasion = false;
+                }
+
+            }
+        }
+        public string CollEditoriale
+        {
+            get
+            {
+                return LivreSource.CollEditoriale;
+            }
+            set
+            {
+                LivreSource.CollEditoriale = value;
+            }
+        }
         public string Pages { get; set; }
         public string Tome { get; set; }
-        public string CoupDeCoeur { get; set; }
-        public string AvisLibraire { get; set; }
+        public string CoupDeCoeur
+        {
+            get
+            {
+                if (LivreSource.CoupDeCoeur)
+                    return "Oui";
+                else
+                    return "";
+            }
+            set
+            {
+                string newVal = value.ToLower();
+                if (newVal == "oui")
+                {
+                    LivreSource.CoupDeCoeur = true;
+                }
+                else
+                {
+                    LivreSource.CoupDeCoeur = false;
+                }
+
+            }
+        }
+        public string AvisLibraire
+        {
+            get
+            {
+                return LivreSource.AvisLibraire;
+            }
+            set
+            {
+                LivreSource.AvisLibraire = value;
+            }
+        }
+        private Livre LivreSource;
 
         public LivreString(Livre source)
         {
+            if (source == null)
+                source = new Livre();
+            LivreSource = source;
             bool Empty = true;
             if ((source.Ean != 0) || (source.Titre != String.Empty)) Empty = false;
             if (Empty)
@@ -104,7 +339,19 @@ namespace BookshopApp.Model
                 PrixNeuf = source.PrixNeuf.ToString();
             TvaTaux = source.TvaTaux.ToString();
             TvaMontant = source.TvaMontant.ToString();
-            Occasion = source.Occasion.ToString();
+            //Occasion = source.Occasion.ToString();
+            if (Empty)
+            {
+                Occasion = "Neuf";
+            }
+            else if (source.Occasion == true)
+            {
+                Occasion = "Occasion";
+            }
+            else
+            {
+                Occasion = "Neuf";
+            }
             CollEditoriale = source.CollEditoriale;
             Pages = source.Pages.ToString();
             Tome = source.Tome.ToString();
