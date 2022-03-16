@@ -92,6 +92,7 @@ namespace BookshopApp.ViewModels
                         {
                             // Sinon, l'ajouter aux references et completer les informations si besoin
                             DbContext.Livres.Add(LivreAAjouter);
+                            LivreAAjouter = new Livre();
                         }
 
                         DbContext.SaveChanges();
