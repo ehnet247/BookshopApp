@@ -104,7 +104,7 @@ namespace BookshopApp.ViewModels
         {
             bool ManageToCreate = true;
             Livre livreAAjouter = new Livre();
-            if (UInt64.TryParse(LivreStringAAjouter.Ean, out ulong ean) == true)
+            if (uint.TryParse(LivreStringAAjouter.Ean, out uint ean) == true)
             {
                 livreAAjouter.Ean = ean;
             }

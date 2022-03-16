@@ -10,11 +10,13 @@ namespace BookshopApp.Model
 {
     public class Livre
     {
-        private UInt64 ean;
         [Key]
-        public UInt64 Ean { get; set; } // BIGINT NOT NULL
-        public string Titre { get; set; } // VARCHAR(255) NOT NULL
+        public UInt32 Ean { get; set; } // INTEGER NOT NULL
+        public UInt64 Isbn13 { get; set; } // BIGINT NOT NULL
+        public bool Occasion { get; set; } // NOT NULL
+        public string Titre { get; set; }
         public string Auteurs { get; set; } // VARCHAR(255) NOT NULL
+        public string Etat { get; set; }
         public string Fournisseur { get; set; } // VARCHAR(127) NOT NULL
         public UInt16 Stock { get; set; } // NOT NULL
         public string Editeur { get; set; } // VARCHAR(127) NOT NULL
@@ -26,7 +28,6 @@ namespace BookshopApp.Model
         public double PrixNeuf { get; set; } // MONEY
         public float TvaTaux { get; set; } // FLOAT
         public double TvaMontant { get; set; } // MONEY
-        public bool Occasion { get; set; } // NOT NULL
         public string CollEditoriale { get; set; } // VARCHAR(127)
         public UInt16 Pages { get; set; }
         public UInt16 Tome { get; set; }
@@ -40,6 +41,7 @@ namespace BookshopApp.Model
             Ean = 0;
             Titre = string.Empty;
             Auteurs = string.Empty;
+            Etat = string.Empty;
             Fournisseur = string.Empty;
             Editeur = string.Empty;
             Categorie = string.Empty;
@@ -61,9 +63,46 @@ namespace BookshopApp.Model
             }
             set
             {
-                ulong convertedValue;
-                ulong.TryParse(value, out convertedValue);
+                uint convertedValue;
+                uint.TryParse(value, out convertedValue);
                 LivreSource.Ean = convertedValue;
+
+            }
+        }
+        public string Isbn13
+        {
+            get
+            {
+                return LivreSource.Isbn13.ToString();
+            }
+            set
+            {
+                uint convertedValue;
+                uint.TryParse(value, out convertedValue);
+                LivreSource.Isbn13 = convertedValue;
+
+            }
+        }
+        public string Occasion
+        {
+            get
+            {
+                if (LivreSource.Occasion)
+                    return "Occasion";
+                else
+                    return "Neuf";
+            }
+            set
+            {
+                string newVal = value.ToLower();
+                if (newVal != "neuf")
+                {
+                    LivreSource.Occasion = true;
+                }
+                else
+                {
+                    LivreSource.Occasion = false;
+                }
 
             }
         }
@@ -87,6 +126,17 @@ namespace BookshopApp.Model
             set
             {
                 LivreSource.Auteurs = value;
+            }
+        }
+        public string Etat
+        {
+            get
+            {
+                return LivreSource.Etat;
+            }
+            set
+            {
+                LivreSource.Etat = value;
             }
         }
         public string Fournisseur
@@ -140,7 +190,7 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.Stock.ToString();
+                return LivreSource.DatePublication.ToString();
             }
             set
             {
@@ -231,29 +281,6 @@ namespace BookshopApp.Model
 
             }
         }
-        public string Occasion
-        {
-            get
-            {
-                if (LivreSource.Occasion)
-                    return "Occasion";
-                else
-                    return "Neuf";
-            }
-            set
-            {
-                string newVal = value.ToLower();
-                if (newVal != "neuf")
-                {
-                    LivreSource.Occasion = true;
-                }
-                else
-                {
-                    LivreSource.Occasion = false;
-                }
-
-            }
-        }
         public string CollEditoriale
         {
             get
@@ -265,8 +292,34 @@ namespace BookshopApp.Model
                 LivreSource.CollEditoriale = value;
             }
         }
-        public string Pages { get; set; }
-        public string Tome { get; set; }
+        public string Pages
+        {
+            get
+            {
+                return LivreSource.Pages.ToString();
+            }
+            set
+            {
+                ushort convertedValue;
+                ushort.TryParse(value, out convertedValue);
+                LivreSource.Pages = convertedValue;
+
+            }
+        }
+        public string Tome
+        {
+            get
+            {
+                return LivreSource.Tome.ToString();
+            }
+            set
+            {
+                ushort convertedValue;
+                ushort.TryParse(value, out convertedValue);
+                LivreSource.Tome = convertedValue;
+
+            }
+        }
         public string CoupDeCoeur
         {
             get
@@ -339,7 +392,6 @@ namespace BookshopApp.Model
                 PrixNeuf = source.PrixNeuf.ToString();
             TvaTaux = source.TvaTaux.ToString();
             TvaMontant = source.TvaMontant.ToString();
-            //Occasion = source.Occasion.ToString();
             if (Empty)
             {
                 Occasion = "Neuf";

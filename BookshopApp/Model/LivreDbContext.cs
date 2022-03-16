@@ -38,9 +38,11 @@ namespace BookshopApp.Model
                 {
                     new Livre
                     {
-                        Ean = 9782359103144,
+                        Ean = 1,
+                        Isbn13 = 9782359103144,
                         Titre = "City Hall, Tome 2",
                         Auteurs = "Guillaume Lapeyre, Rémi Guérin",
+                        Etat = "Bon état",
                         Fournisseur = "",
                         Stock = 1,
                         Editeur = "",
@@ -59,9 +61,11 @@ namespace BookshopApp.Model
                     },
                     new Livre
                     {
-                        Ean = 9782809714470,
+                        Ean = 2,
+                        Isbn13 = 9782809714470,
                         Titre = "Un sandwich à Ginza",
                         Auteurs = "Yôko Hiramatsu, Jirô Taniguchi",
+                        Etat = "Neuf",
                         Fournisseur = "",
                         Stock = 1,
                         Editeur = "Piquier",

@@ -10,8 +10,11 @@
         <DataGrid x:Name="DGEdit" ItemsSource="{Binding DataSource}" SelectedItem="{Binding SelectedRow, Mode=TwoWay}" AutoGenerateColumns="False" IsReadOnly="True" Margin="5" Height="200" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Ean" Binding="{Binding LivreString.Ean}" />
+                <DataGridTextColumn Header="ISBN-13" Binding="{Binding LivreString.Isbn13}" />
+                <DataGridTextColumn Header="Occasion" Binding="{Binding LivreString.Occasion}" />
                 <DataGridTextColumn Header="Titre" Binding="{Binding LivreString.Titre}" />
                 <DataGridTextColumn Header="Auteurs" Binding="{Binding LivreString.Auteurs}" />
+                <DataGridTextColumn Header="Etat" Binding="{Binding LivreString.Etat}" />
                 <DataGridTextColumn Header="Fournisseur" Binding="{Binding LivreString.Fournisseur}" />
                 <DataGridTextColumn Header="Stock" Binding="{Binding LivreString.Stock}" />
                 <DataGridTextColumn Header="Editeur" Binding="{Binding LivreString.Editeur}" />
@@ -23,7 +26,6 @@
                 <DataGridTextColumn Header="Prix neuf" Binding="{Binding LivreString.PrixNeuf}" />
                 <DataGridTextColumn Header="Taux TVA" Binding="{Binding LivreString.TvaTaux}" />
                 <DataGridTextColumn Header="Montant TVA" Binding="{Binding LivreString.TvaMontant}" />
-                <DataGridTextColumn Header="Occasion" Binding="{Binding LivreString.Occasion}" />
             </DataGrid.Columns>
         </DataGrid>
         <Grid >
@@ -60,18 +62,19 @@
                         <Label Grid.Row="0" Grid.Column="0" Content="Ean" FontWeight="Bold"  />
                         <Label Grid.Row="1" Grid.Column="0" Content="Titre" />
                         <Label Grid.Row="2" Grid.Column="0" Content="Auteurs" />
-                        <Label Grid.Row="3" Grid.Column="0" Content="Fournisseur" />
-                        <Label Grid.Row="4" Grid.Column="0" Content="Stock" />
-                        <Label Grid.Row="5" Grid.Column="0" Content="Editeur" />
-                        <Label Grid.Row="6" Grid.Column="0" Content="Categorie" />
-                        <Label Grid.Row="7" Grid.Column="0" Content="Date de publication" />
-                        <Label Grid.Row="8" Grid.Column="0" Content="Disponibilite" />
-                        <Label Grid.Row="9" Grid.Column="0" Content="Poids" />
-                        <Label Grid.Row="10" Grid.Column="0" Content="Prix de vente" />
-                        <Label Grid.Row="11" Grid.Column="0" Content="Prix neuf" />
-                        <Label Grid.Row="12" Grid.Column="0" Content="Taux TVA" />
-                        <Label Grid.Row="13" Grid.Column="0" Content="Montant TVA" />
-                        <Label Grid.Row="14" Grid.Column="0" Content="Occasion" />
+                        <Label Grid.Row="3" Grid.Column="0" Content="Etat" />
+                        <Label Grid.Row="4" Grid.Column="0" Content="Fournisseur" />
+                        <Label Grid.Row="5" Grid.Column="0" Content="Stock" />
+                        <Label Grid.Row="6" Grid.Column="0" Content="Editeur" />
+                        <Label Grid.Row="7" Grid.Column="0" Content="Categorie" />
+                        <Label Grid.Row="8" Grid.Column="0" Content="Date de publication" />
+                        <Label Grid.Row="9" Grid.Column="0" Content="Disponibilite" />
+                        <Label Grid.Row="10" Grid.Column="0" Content="Poids" />
+                        <Label Grid.Row="11" Grid.Column="0" Content="Prix de vente" />
+                        <Label Grid.Row="12" Grid.Column="0" Content="Prix neuf" />
+                        <Label Grid.Row="13" Grid.Column="0" Content="Taux TVA" />
+                        <Label Grid.Row="14" Grid.Column="0" Content="Montant TVA" />
+                        <Label Grid.Row="15" Grid.Column="0" Content="Occasion" />
 
                         <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SelectedRow.LivreString.Ean}" />
                         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SelectedRow.LivreString.Titre}" />

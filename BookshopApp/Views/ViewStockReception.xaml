@@ -10,8 +10,11 @@
         <DataGrid x:Name="DGStock" ItemsSource="{Binding DataSource}" AutoGenerateColumns="False" IsReadOnly="True" Margin="5" Height="200" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Ean" Binding="{Binding LivreString.Ean}" />
+                <DataGridTextColumn Header="ISBN-13" Binding="{Binding LivreString.Isbn13}" />
+                <DataGridTextColumn Header="Occasion" Binding="{Binding LivreString.Occasion}" />
                 <DataGridTextColumn Header="Titre" Binding="{Binding LivreString.Titre}" />
                 <DataGridTextColumn Header="Auteurs" Binding="{Binding LivreString.Auteurs}" />
+                <DataGridTextColumn Header="Etat" Binding="{Binding LivreString.Etat}" />
                 <DataGridTextColumn Header="Fournisseur" Binding="{Binding LivreString.Fournisseur}" />
                 <DataGridTextColumn Header="Stock" Binding="{Binding LivreString.Stock}" />
                 <DataGridTextColumn Header="Editeur" Binding="{Binding LivreString.Editeur}" />
@@ -23,7 +26,6 @@
                 <DataGridTextColumn Header="Prix neuf" Binding="{Binding LivreString.PrixNeuf}" />
                 <DataGridTextColumn Header="Taux TVA" Binding="{Binding LivreString.TvaTaux}" />
                 <DataGridTextColumn Header="Montant TVA" Binding="{Binding LivreString.TvaMontant}" />
-                <DataGridTextColumn Header="Occasion" Binding="{Binding LivreString.Occasion}" />
             </DataGrid.Columns>
         </DataGrid>
         <Grid >
