@@ -40,7 +40,7 @@ namespace BookshopApp.ViewModels
         public ViewModelStockNavigation()
         {
             StockRechercheTabContent = new ViewModelStockRecherche();
-            StockModifTabContent = new ViewModelStockModif();
+            StockModifTabContent = new ViewModelStockEdit();
             StockReceptionTabContent = new ViewModelStockReception();
         }
 

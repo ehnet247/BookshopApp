@@ -15,18 +15,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BookshopApp.ViewModels;
 
 namespace BookshopApp.Views
 {
     /// <summary>
     /// Interaction logic for StockViewModif.xaml
     /// </summary>
-    public partial class ViewStockModif : UserControl
+    public partial class ViewStockEdit : UserControl
     {
 
-        public ViewStockModif()
+        public ViewStockEdit()
         {
             InitializeComponent();
+            this.DataContext = new ViewModelStockEdit();
         }
     }
 }

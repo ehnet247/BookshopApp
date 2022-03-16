@@ -8,7 +8,7 @@
         xmlns:vm="clr-namespace:BookshopApp.ViewModels"
         mc:Ignorable="d"
         Background="Snow"
-        Title="MainWindow" Height="6100" Width="950">
+        Title="Bookshop App" Height="6100" Width="950">
     <Window.Resources>
         <DataTemplate x:Key="CheckedDataTemplate">
             <Grid Background="DodgerBlue" Height="64">
@@ -54,9 +54,9 @@
             <uc:ViewStockReception />
 
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:ViewModelStockModif}">
+        <DataTemplate DataType="{x:Type vm:ViewModelStockEdit}">
 
-            <uc:ViewStockModif />
+            <uc:ViewStockEdit />
 
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:ViewModelAchat}">

@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="BookshopApp.Views.ViewStockEdit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BookshopApp.Views" xmlns:viewmodels="clr-namespace:BookshopApp.ViewModels" xmlns:model="clr-namespace:BookshopApp.Model" d:DataContext="{d:DesignInstance Type=viewmodels:ViewModelStockEdit}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Orientation="Vertical">
+        <DataGrid x:Name="DGEdit" ItemsSource="{Binding DataSource}" SelectedItem="{Binding SelectedRow, Mode=TwoWay}" AutoGenerateColumns="False" IsReadOnly="True" Margin="5" Height="200" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Ean" Binding="{Binding LivreString.Ean}" />
+                <DataGridTextColumn Header="Titre" Binding="{Binding LivreString.Titre}" />
+                <DataGridTextColumn Header="Auteurs" Binding="{Binding LivreString.Auteurs}" />
+                <DataGridTextColumn Header="Fournisseur" Binding="{Binding LivreString.Fournisseur}" />
+                <DataGridTextColumn Header="Stock" Binding="{Binding LivreString.Stock}" />
+                <DataGridTextColumn Header="Editeur" Binding="{Binding LivreString.Editeur}" />
+                <DataGridTextColumn Header="Catégorie" Binding="{Binding LivreString.Categorie}" />
+                <DataGridTextColumn Header="Date de publication" Binding="{Binding LivreString.DatePublication}" />
+                <DataGridTextColumn Header="Disponibilité" Binding="{Binding LivreString.Disponibilite}" />
+                <DataGridTextColumn Header="Poids" Binding="{Binding LivreString.Poids}" />
+                <DataGridTextColumn Header="Prix de vente" Binding="{Binding LivreString.PrixVente}" />
+                <DataGridTextColumn Header="Prix neuf" Binding="{Binding LivreString.PrixNeuf}" />
+                <DataGridTextColumn Header="Taux TVA" Binding="{Binding LivreString.TvaTaux}" />
+                <DataGridTextColumn Header="Montant TVA" Binding="{Binding LivreString.TvaMontant}" />
+                <DataGridTextColumn Header="Occasion" Binding="{Binding LivreString.Occasion}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" BorderBrush="Gray" BorderThickness="1" Margin="5" >
+                <StackPanel Margin="5">
+                    <Label Content="Modification" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <Grid Margin="5" x:Name="GridModif">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" MinWidth="100" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Ean" FontWeight="Bold"  />
+                        <Label Grid.Row="1" Grid.Column="0" Content="Titre" />
+                        <Label Grid.Row="2" Grid.Column="0" Content="Auteurs" />
+                        <Label Grid.Row="3" Grid.Column="0" Content="Fournisseur" />
+                        <Label Grid.Row="4" Grid.Column="0" Content="Stock" />
+                        <Label Grid.Row="5" Grid.Column="0" Content="Editeur" />
+                        <Label Grid.Row="6" Grid.Column="0" Content="Categorie" />
+                        <Label Grid.Row="7" Grid.Column="0" Content="Date de publication" />
+                        <Label Grid.Row="8" Grid.Column="0" Content="Disponibilite" />
+                        <Label Grid.Row="9" Grid.Column="0" Content="Poids" />
+                        <Label Grid.Row="10" Grid.Column="0" Content="Prix de vente" />
+                        <Label Grid.Row="11" Grid.Column="0" Content="Prix neuf" />
+                        <Label Grid.Row="12" Grid.Column="0" Content="Taux TVA" />
+                        <Label Grid.Row="13" Grid.Column="0" Content="Montant TVA" />
+                        <Label Grid.Row="14" Grid.Column="0" Content="Occasion" />
+
+                        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding LivreString. LivreStringAEditer.Ean}" />
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LivreStringAEditer.Titre}" />
+                        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding LivreStringAEditer.Auteurs}" />
+                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding LivreStringAEditer.Fournisseur}" />
+                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding LivreStringAEditer.Quantite}" />
+                        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding LivreStringAEditer.Editeur}" />
+                        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding LivreStringAEditer.Categorie}" />
+                        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding LivreStringAEditer.DatePublication}" />
+                        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding LivreStringAEditer.Disponibilite}" />
+                        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding LivreStringAEditer.Poids}" />
+                        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding LivreStringAEditer.PrixVente}" />
+                        <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding LivreStringAEditer.PrixNeuf}" />
+                        <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding LivreStringAEditer.TvaTaux}" />
+                        <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding LivreStringAEditer.TvaMontant}" />
+                        <ComboBox Grid.Row="14" Grid.Column="1" Text="{Binding LivreStringAEditer.Occasion}" >
+                            <ComboBoxItem>Occasion</ComboBoxItem>
+                            <ComboBoxItem>Neuf</ComboBoxItem>
+                        </ComboBox>
+
+                        <Button Content="Valider" Command="{Binding CommandValider}" Grid.Row="15" Grid.ColumnSpan="2" Margin="5" />
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </StackPanel>
+</UserControl>

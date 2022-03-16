@@ -119,7 +119,7 @@ namespace BookshopApp.ViewModels
 
         {
 
-            SelectedContentViewModel = new ViewModelStockModif();
+            SelectedContentViewModel = new ViewModelStockEdit();
             SelectedMenuViewModel = new ViewModelMenuStock();
 
         }
