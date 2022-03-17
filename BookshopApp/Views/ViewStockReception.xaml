@@ -10,9 +10,10 @@
         <DataGrid x:Name="DGStock" ItemsSource="{Binding DataSource}" AutoGenerateColumns="False" IsReadOnly="True" Margin="5" Height="200" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Ean" Binding="{Binding LivreString.Ean}" />
-                <DataGridTextColumn Header="ISBN-13" Binding="{Binding LivreString.Isbn13}" />
+                <DataGridTextColumn Header="ISBN" Binding="{Binding LivreString.Isbn13}" />
                 <DataGridTextColumn Header="Occasion" Binding="{Binding LivreString.Occasion}" />
                 <DataGridTextColumn Header="Titre" Binding="{Binding LivreString.Titre}" />
+                <DataGridTextColumn Header="Provenance" Binding="{Binding LivreString.Provenance}" />
                 <DataGridTextColumn Header="Auteurs" Binding="{Binding LivreString.Auteurs}" />
                 <DataGridTextColumn Header="Etat" Binding="{Binding LivreString.Etat}" />
                 <DataGridTextColumn Header="Fournisseur" Binding="{Binding LivreString.Fournisseur}" />
@@ -23,9 +24,15 @@
                 <DataGridTextColumn Header="Disponibilité" Binding="{Binding LivreString.Disponibilite}" />
                 <DataGridTextColumn Header="Poids" Binding="{Binding LivreString.Poids}" />
                 <DataGridTextColumn Header="Prix de vente" Binding="{Binding LivreString.PrixVente}" />
+                <DataGridTextColumn Header="Prix d'achat" Binding="{Binding LivreString.PrixAchat}" />
                 <DataGridTextColumn Header="Prix neuf" Binding="{Binding LivreString.PrixNeuf}" />
                 <DataGridTextColumn Header="Taux TVA" Binding="{Binding LivreString.TvaTaux}" />
                 <DataGridTextColumn Header="Montant TVA" Binding="{Binding LivreString.TvaMontant}" />
+                <DataGridTextColumn Header="Collection" Binding="{Binding LivreString.CollEditoriale}" />
+                <DataGridTextColumn Header="Pages" Binding="{Binding LivreString.Pages}" />
+                <DataGridTextColumn Header="Tome" Binding="{Binding LivreString.Tome}" />
+                <DataGridTextColumn Header="Coup de coeur" Binding="{Binding LivreString.CoupDeCoeur}" />
+                <DataGridTextColumn Header="Avis libraire" Binding="{Binding LivreString.AvisLibraire}" />
             </DataGrid.Columns>
         </DataGrid>
         <Grid >
@@ -79,7 +86,7 @@
                         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LivreStringAAjouter.Titre}" />
                         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding LivreStringAAjouter.Auteurs}" />
                         <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding LivreStringAAjouter.Fournisseur}" />
-                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding LivreStringAAjouter.Quantite}" />
+                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding LivreStringAAjouter.Stock}" />
                         <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding LivreStringAAjouter.Editeur}" />
                         <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding LivreStringAAjouter.Categorie}" />
                         <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding LivreStringAAjouter.DatePublication}" />

@@ -12,23 +12,25 @@ namespace BookshopApp.Model
     {
         [Key]
         public UInt32 Ean { get; set; } // INTEGER NOT NULL
-        public UInt64 Isbn13 { get; set; } // BIGINT NOT NULL
-        public bool Occasion { get; set; } // NOT NULL
-        public string Titre { get; set; }
-        public string Auteurs { get; set; } // VARCHAR(255) NOT NULL
-        public string Etat { get; set; }
-        public string Fournisseur { get; set; } // VARCHAR(127) NOT NULL
+        public UInt64 Isbn13 { get; set; } // BIGINT
+        public bool Occasion { get; set; } // BOOL NOT NULL
+        public string Titre { get; set; } // NOT NULL
+        public string Provenance { get; set; } // TEXT
+        public string Auteurs { get; set; } // TEXT
+        public string Etat { get; set; } // TEXT
+        public string Fournisseur { get; set; } // TEXT
         public UInt16 Stock { get; set; } // NOT NULL
-        public string Editeur { get; set; } // VARCHAR(127) NOT NULL
-        public string Categorie { get; set; } // VARCHAR(127) NOT NULL
-        public DateTime DatePublication { get; set; } // DATE NOT NULL
-        public string Disponibilite { get; set; } // VARCHAR(127) NOT NULL
-        public UInt16 Poids { get; set; } // NOT NULL
-        public double PrixVente { get; set; } // MONEY NOT NULL
-        public double PrixNeuf { get; set; } // MONEY
-        public float TvaTaux { get; set; } // FLOAT
-        public double TvaMontant { get; set; } // MONEY
-        public string CollEditoriale { get; set; } // VARCHAR(127)
+        public string Editeur { get; set; } // TEXT
+        public string Categorie { get; set; } // TEXT
+        public DateTime DatePublication { get; set; } // DATE
+        public string Disponibilite { get; set; } // TEXT
+        public UInt16 Poids { get; set; } //
+        public double PrixVente { get; set; } // REAL NOT NULL
+        public double PrixAchat { get; set; } // REAL
+        public double PrixNeuf { get; set; } // REAL
+        public float TvaTaux { get; set; } // REAL
+        public double TvaMontant { get; set; } // REAL
+        public string CollEditoriale { get; set; } // TEXT
         public UInt16 Pages { get; set; }
         public UInt16 Tome { get; set; }
         public bool CoupDeCoeur { get; set; }
@@ -39,10 +41,14 @@ namespace BookshopApp.Model
         public Livre()
         {
             Ean = 0;
+            Isbn13 = 0;
+            Occasion = true;
             Titre = string.Empty;
+            Provenance = string.Empty;
             Auteurs = string.Empty;
             Etat = string.Empty;
             Fournisseur = string.Empty;
+            Stock = 0;
             Editeur = string.Empty;
             Categorie = string.Empty;
             Disponibilite = string.Empty;
@@ -117,6 +123,17 @@ namespace BookshopApp.Model
                 LivreSource.Titre = value;
             }
         }
+        public string Provenance
+        {
+            get
+            {
+                return LivreSource.Provenance;
+            }
+            set
+            {
+                LivreSource.Provenance = value;
+            }
+        }
         public string Auteurs
         {
             get
@@ -150,7 +167,7 @@ namespace BookshopApp.Model
                 LivreSource.Fournisseur = value;
             }
         }
-        public string Quantite
+        public string Stock
         {
             get
             {
@@ -236,6 +253,20 @@ namespace BookshopApp.Model
                 double convertedValue;
                 Double.TryParse(value, out convertedValue);
                 LivreSource.PrixVente = convertedValue;
+
+            }
+        }
+        public string PrixAchat
+        {
+            get
+            {
+                return LivreSource.PrixAchat.ToString();
+            }
+            set
+            {
+                double convertedValue;
+                Double.TryParse(value, out convertedValue);
+                LivreSource.PrixAchat = convertedValue;
 
             }
         }
@@ -368,12 +399,13 @@ namespace BookshopApp.Model
             else
                 Ean = source.Ean.ToString();
             Titre = source.Titre;
+            Provenance = source.Provenance;
             Auteurs = source.Auteurs;
             Fournisseur = source.Fournisseur;
             if (Empty)
-                Quantite = string.Empty;
+                Stock = string.Empty;
             else
-                Quantite = source.Stock.ToString();
+                Stock = source.Stock.ToString();
             Editeur = source.Editeur;
             Categorie = source.Categorie;
             if (Empty)

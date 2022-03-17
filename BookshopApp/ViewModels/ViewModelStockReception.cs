@@ -114,7 +114,7 @@ namespace BookshopApp.ViewModels
                 // Afficher un message d'erreur
             }
 
-            if (UInt16.TryParse(LivreStringAAjouter.Quantite, out ushort stock) == true)
+            if (UInt16.TryParse(LivreStringAAjouter.Stock, out ushort stock) == true)
             {
                 livreAAjouter.Stock = stock;
             }
@@ -253,7 +253,7 @@ namespace BookshopApp.ViewModels
         {
             bool returnValue = false;
             if ((LivreStringAAjouter.Ean != string.Empty)
-                && (LivreStringAAjouter.Quantite != string.Empty))
+                && (LivreStringAAjouter.Stock != string.Empty))
             {
                 returnValue = true;
             }

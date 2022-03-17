@@ -40,6 +40,8 @@ namespace BookshopApp.Model
                     {
                         Ean = 1,
                         Isbn13 = 9782359103144,
+                        Occasion = true,
+                        Provenance = "Emmaus",
                         Titre = "City Hall, Tome 2",
                         Auteurs = "Guillaume Lapeyre, Rémi Guérin",
                         Etat = "Bon état",
@@ -51,10 +53,10 @@ namespace BookshopApp.Model
                         Disponibilite = "Disponible",
                         Poids = 76,
                         PrixVente = 0,
+                        PrixAchat = 1,
                         PrixNeuf = 0,
                         TvaTaux = 5.5f,
                         TvaMontant = 0,
-                        Occasion = true,
                         CollEditoriale = "",
                         CoupDeCoeur = false,
                         AvisLibraire = ""
@@ -63,6 +65,8 @@ namespace BookshopApp.Model
                     {
                         Ean = 2,
                         Isbn13 = 9782809714470,
+                        Occasion = true,
+                        Provenance = "Client",
                         Titre = "Un sandwich à Ginza",
                         Auteurs = "Yôko Hiramatsu, Jirô Taniguchi",
                         Etat = "Neuf",
@@ -74,10 +78,10 @@ namespace BookshopApp.Model
                         Disponibilite = "Disponible",
                         Poids = 80,
                         PrixVente = 0,
+                        PrixAchat= 1,
                         PrixNeuf = 0,
                         TvaTaux = 5.5f,
                         TvaMontant = 0,
-                        Occasion = true,
                         CollEditoriale = "",
                         CoupDeCoeur = false,
                         AvisLibraire = ""
