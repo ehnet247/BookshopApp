@@ -66,11 +66,11 @@
                             <RowDefinition />
                             <RowDefinition />
                         </Grid.RowDefinitions>
-                        <Label Grid.Row="0" Grid.Column="0" Content="Ean" FontWeight="Bold"  />
+                        <Label Grid.Row="0" Grid.Column="0" Content="ISBN" FontWeight="Bold"  />
                         <Label Grid.Row="1" Grid.Column="0" Content="Titre" />
                         <Label Grid.Row="2" Grid.Column="0" Content="Auteurs" />
                         <Label Grid.Row="3" Grid.Column="0" Content="Fournisseur" />
-                        <Label Grid.Row="4" Grid.Column="0" Content="Stock" />
+                        <Label Grid.Row="4" Grid.Column="0" Content="Quantité" />
                         <Label Grid.Row="5" Grid.Column="0" Content="Editeur" />
                         <Label Grid.Row="6" Grid.Column="0" Content="Categorie" />
                         <Label Grid.Row="7" Grid.Column="0" Content="Date de publication" />
@@ -82,7 +82,7 @@
                         <Label Grid.Row="13" Grid.Column="0" Content="Montant TVA" />
                         <Label Grid.Row="14" Grid.Column="0" Content="Occasion" />
 
-                        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding LivreStringAAjouter.Ean}" />
+                        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding LivreStringAAjouter.Isbn13}" />
                         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LivreStringAAjouter.Titre}" />
                         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding LivreStringAAjouter.Auteurs}" />
                         <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding LivreStringAAjouter.Fournisseur}" />
