@@ -3,10 +3,78 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:BookshopApp.Views"
+             xmlns:local="clr-namespace:BookshopApp.Views" xmlns:viewmodels="clr-namespace:BookshopApp.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ViewModelStockReception}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+    <StackPanel Orientation="Vertical">
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" BorderBrush="Gray" BorderThickness="1" Margin="5" >
+                <StackPanel Margin="5">
+                    <Label Content="Réception" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <Grid Margin="5" x:Name="GridReception">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" MinWidth="100" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="ISBN" FontWeight="Bold"  />
+                        <Label Grid.Row="1" Grid.Column="0" Content="Titre" />
+                        <Label Grid.Row="2" Grid.Column="0" Content="Auteurs" />
+                        <Label Grid.Row="3" Grid.Column="0" Content="Fournisseur" />
+                        <Label Grid.Row="4" Grid.Column="0" Content="Quantité" />
+                        <Label Grid.Row="5" Grid.Column="0" Content="Editeur" />
+                        <Label Grid.Row="6" Grid.Column="0" Content="Categorie" />
+                        <Label Grid.Row="7" Grid.Column="0" Content="Date de publication" />
+                        <Label Grid.Row="8" Grid.Column="0" Content="Disponibilite" />
+                        <Label Grid.Row="9" Grid.Column="0" Content="Poids" />
+                        <Label Grid.Row="10" Grid.Column="0" Content="Prix de vente" />
+                        <Label Grid.Row="11" Grid.Column="0" Content="Prix neuf" />
+                        <Label Grid.Row="12" Grid.Column="0" Content="Taux TVA" />
+                        <Label Grid.Row="13" Grid.Column="0" Content="Montant TVA" />
+                        <Label Grid.Row="14" Grid.Column="0" Content="Occasion" />
+
+                        <TextBox Grid.Row="0" Width="200" Grid.Column="1" Text="{Binding LivreStringAAcheter.Isbn13}" />
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LivreStringAAcheter.Titre}" />
+                        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding LivreStringAAcheter.Auteurs}" />
+                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding LivreStringAAcheter.Fournisseur}" />
+                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding LivreStringAAcheter.Stock}" />
+                        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding LivreStringAAcheter.Editeur}" />
+                        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding LivreStringAAcheter.Categorie}" />
+                        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding LivreStringAAcheter.DatePublication}" />
+                        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding LivreStringAAcheter.Disponibilite}" />
+                        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding LivreStringAAcheter.Poids}" />
+                        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding LivreStringAAcheter.PrixVente}" />
+                        <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding LivreStringAAcheter.PrixNeuf}" />
+                        <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding LivreStringAAcheter.TvaTaux}" />
+                        <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding LivreStringAAcheter.TvaMontant}" />
+                        <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding LivreStringAAcheter.Occasion}" />
+
+                        <Button Content="Evaluer" Command="{Binding CommandEvaluer}" Grid.Row="15" Grid.ColumnSpan="2" Margin="5" />
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </StackPanel>
 </UserControl>
+
