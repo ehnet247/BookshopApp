@@ -65,7 +65,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.Ean.ToString();
+                if (LivreSource.Isbn13 == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.Ean.ToString();
             }
             set
             {
@@ -79,7 +82,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.Isbn13.ToString();
+                if (LivreSource.Isbn13 == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.Isbn13.ToString();
             }
             set
             {
@@ -93,10 +99,15 @@ namespace BookshopApp.Model
         {
             get
             {
-                if (LivreSource.Occasion)
-                    return "Occasion";
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
                 else
-                    return "Neuf";
+                {
+                    if (LivreSource.Occasion)
+                        return "Occasion";
+                    else
+                        return "Neuf";
+                }
             }
             set
             {
@@ -116,7 +127,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.Titre;
+                if (LivreSource.Isbn13 == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.Titre;
             }
             set
             {
@@ -127,7 +141,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.Provenance;
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.Provenance;
             }
             set
             {
@@ -138,7 +155,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.Auteurs;
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.Auteurs;
             }
             set
             {
@@ -149,7 +169,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.Etat;
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.Etat;
             }
             set
             {
@@ -160,7 +183,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.Fournisseur;
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.Fournisseur;
             }
             set
             {
@@ -171,7 +197,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.Stock.ToString();
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.Stock.ToString();
             }
             set
             {
@@ -185,7 +214,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.Editeur;
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.Editeur;
             }
             set
             {
@@ -196,7 +228,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.Categorie;
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.Categorie;
             }
             set
             {
@@ -207,7 +242,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.DatePublication.ToString();
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.DatePublication.ToString();
             }
             set
             {
@@ -221,7 +259,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.Disponibilite;
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.Disponibilite;
             }
             set
             {
@@ -232,7 +273,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.Poids.ToString();
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.Poids.ToString();
             }
             set
             {
@@ -246,7 +290,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.PrixVente.ToString();
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.PrixVente.ToString();
             }
             set
             {
@@ -260,7 +307,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.PrixAchat.ToString();
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.PrixAchat.ToString();
             }
             set
             {
@@ -274,7 +324,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.PrixNeuf.ToString();
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.PrixNeuf.ToString();
             }
             set
             {
@@ -288,7 +341,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.TvaTaux.ToString();
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.TvaTaux.ToString();
             }
             set
             {
@@ -302,7 +358,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.TvaMontant.ToString();
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.TvaMontant.ToString();
             }
             set
             {
@@ -316,7 +375,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.CollEditoriale;
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.CollEditoriale;
             }
             set
             {
@@ -327,7 +389,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.Pages.ToString();
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.Pages.ToString();
             }
             set
             {
@@ -341,7 +406,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.Tome.ToString();
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.Tome.ToString();
             }
             set
             {
@@ -355,6 +423,9 @@ namespace BookshopApp.Model
         {
             get
             {
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
                 if (LivreSource.CoupDeCoeur)
                     return "Oui";
                 else
@@ -378,7 +449,10 @@ namespace BookshopApp.Model
         {
             get
             {
-                return LivreSource.AvisLibraire;
+                if (LivreSource.Ean == 0)
+                    return String.Empty;
+                else
+                    return LivreSource.AvisLibraire;
             }
             set
             {
@@ -390,57 +464,10 @@ namespace BookshopApp.Model
         public LivreString(Livre source)
         {
             if (source == null)
+            {
                 source = new Livre();
+            }
             LivreSource = source;
-            bool Empty = true;
-            if ((source.Ean != 0) || (source.Titre != String.Empty)) Empty = false;
-            if (Empty)
-                Ean = string.Empty;
-            else
-                Ean = source.Ean.ToString();
-            Titre = source.Titre;
-            Provenance = source.Provenance;
-            Auteurs = source.Auteurs;
-            Fournisseur = source.Fournisseur;
-            if (Empty)
-                Stock = string.Empty;
-            else
-                Stock = source.Stock.ToString();
-            Editeur = source.Editeur;
-            Categorie = source.Categorie;
-            if (Empty)
-                DatePublication = string.Empty;
-            else
-                DatePublication = source.DatePublication.ToString();
-            Disponibilite = source.Disponibilite;
-            Poids = source.Poids.ToString();
-            if (Empty)
-                PrixVente = String.Empty;
-            else
-                PrixVente = source.PrixVente.ToString();
-            if (Empty)
-                PrixNeuf = string.Empty;
-            else
-                PrixNeuf = source.PrixNeuf.ToString();
-            TvaTaux = source.TvaTaux.ToString();
-            TvaMontant = source.TvaMontant.ToString();
-            if (Empty)
-            {
-                Occasion = "Neuf";
-            }
-            else if (source.Occasion == true)
-            {
-                Occasion = "Occasion";
-            }
-            else
-            {
-                Occasion = "Neuf";
-            }
-            CollEditoriale = source.CollEditoriale;
-            Pages = source.Pages.ToString();
-            Tome = source.Tome.ToString();
-            CoupDeCoeur = source.CoupDeCoeur.ToString();
-            AvisLibraire = source.AvisLibraire;
         }
     }
 }
